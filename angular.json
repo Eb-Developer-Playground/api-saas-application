@@ -4,6 +4,14 @@
   "newProjectRoot": "projects",
   "projects": {
     "api-monetization": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "fr-FR": {
+            "translation": "src/locale/messages.fr.xlf"
+          }
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,6 +25,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize":["fr-FR"],
             "outputPath": "dist/api-monetization",
             "index": "src/index.html",
             "main": "src/main.ts",
