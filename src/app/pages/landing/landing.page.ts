@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing.page.css']
 })
 export class LandingPage implements OnInit {
-
-  constructor() { }
+  title = 'Home';
+  constructor(private titleService: Title) { 
+    this.titleService.setTitle($localize `${this.title}`)
+  }
 
   ngOnInit() {
   }
