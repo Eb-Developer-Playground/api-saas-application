@@ -1,0 +1,73 @@
+.example-toolbar {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.nav-links,
+.auth-links {
+  display: flex;
+  align-items: center;
+}
+
+.auth-links {
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .spacer {
+    flex: 0 0 auto;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .auth-links {
+    justify-content: flex-end;
+  }
+}
+
+
+.example-toolbar {
+  display: flex;
+  align-items: center;
+  padding: 0 16px; /* Adjust padding as needed */
+}
+
+.branding-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.branding-logo {
+  background-color: white; /* Set the background color */
+  max-width: 50px; /* Adjust max-width of the logo */
+  margin-right: 12px; /* Adjust margin as needed */
+}
+
+.logo-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.branding-title {
+  flex-grow: 1;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .branding-logo {
+    display: none; /* Hide logo on smaller screens */
+  }
+
+  /* Show 'Equity Gateway' text before 'API Gateway' when image is hidden */
+  .branding-container .example-app-name::before {
+    content: "Equity ";
+  }
+}
