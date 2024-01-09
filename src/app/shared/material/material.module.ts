@@ -48,6 +48,8 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 
 
+
+
 const materialModules=[
   MatAutocompleteModule,
   MatCheckboxModule,
@@ -84,7 +86,7 @@ const materialModules=[
   MatTooltipModule,
   MatPaginatorModule,
   MatSortModule,
-  MatTableModule,
+  MatTableModule
 ];
 
 @NgModule({
