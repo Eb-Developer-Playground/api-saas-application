@@ -1,0 +1,21 @@
+/* alert.component.css */
+.alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.success {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.error {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+.warning {
+    background-color: #fcf8e3;
+    color: #8a6d3b;
+}
