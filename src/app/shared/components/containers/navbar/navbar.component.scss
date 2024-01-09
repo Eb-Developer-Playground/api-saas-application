@@ -12,10 +12,12 @@
 .auth-links {
   display: flex;
   align-items: center;
+  color: black;
 }
 
 .auth-links {
   flex-wrap: wrap;
+
 }
 
 @media screen and (max-width: 768px) {
@@ -32,6 +34,10 @@
   }
 }
 
+.example-app-name {
+  color:black;
+}
+
 
 .example-toolbar {
   display: flex;
@@ -46,7 +52,7 @@
 }
 
 .branding-logo {
-  background-color: white; /* Set the background color */
+  // background-color: white; /* Set the background color */
   max-width: 50px; /* Adjust max-width of the logo */
   margin-right: 12px; /* Adjust margin as needed */
 }
