@@ -8,7 +8,7 @@ import { AlertService } from 'src/app/shared/services/alert.service';
 @Component({
   selector: 'app-alert',
   templateUrl: './alert.component.html',
-  styleUrls: ['./alert.component.css']
+  styleUrls: ['./alert.component.scss']
 })
 export class AlertComponent implements OnInit {
   @Input() type: 'success' | 'error' | 'warning' = 'success';
