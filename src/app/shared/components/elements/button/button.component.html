@@ -1,3 +1,9 @@
-<p>
-  button works!
-</p>
+<button mat-raised-button
+  [attr.aria-label]="ariaLabel"
+  [color]="getButtonColor()"
+  [disabled]="disabled"
+  (click)="handleClick()"
+  [attr.type]="type === 'submit' ? 'submit' : 'button'"
+>
+{{ btnText }}
+</button>
