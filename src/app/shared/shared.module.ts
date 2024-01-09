@@ -13,6 +13,8 @@ import { HeroComponent } from './components/blocks/hero/hero.component';
 import { FeaturesComponent } from './components/blocks/features/features.component';
 import { HelpCenterComponent } from './components/blocks/help-center/help-center.component';
 import { FooterComponent } from './components/containers/footer/footer.component';
+import { AlertComponent } from './components/elements/alert/alert.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -22,7 +24,8 @@ import { FooterComponent } from './components/containers/footer/footer.component
         HeroComponent,
         FeaturesComponent,
         HelpCenterComponent,
-        FooterComponent
+        FooterComponent,
+        AlertComponent
         // ... All other shared components, directives, pipes, etc. Tobe shared externally
     ],
 
@@ -30,7 +33,8 @@ import { FooterComponent } from './components/containers/footer/footer.component
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        MaterialModule
+        MaterialModule,
+        RouterModule // to use routerLink in navbar and sidebar 
     ],
     exports: [
         CommonModule,
@@ -43,7 +47,8 @@ import { FooterComponent } from './components/containers/footer/footer.component
         HeroComponent,
         FeaturesComponent,
         HelpCenterComponent,
-        FooterComponent
+        FooterComponent,
+        AlertComponent
         
         // ... All other shared components, directives, pipes, etc. to be used externally
     ]
