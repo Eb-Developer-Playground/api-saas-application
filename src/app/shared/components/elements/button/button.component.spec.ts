@@ -1,28 +1,20 @@
-/* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
+import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing'; // Import RouterTestingModule
 import { ButtonComponent } from './button.component';
 
 describe('ButtonComponent', () => {
-  let component: ButtonComponent;
-  let fixture: ComponentFixture<ButtonComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ButtonComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ButtonComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ButtonComponent],
+      imports: [RouterTestingModule], // Include RouterTestingModule here
+    }).compileComponents();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(ButtonComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
   });
+
+  // Add other tests as needed for the AppComponent
 });

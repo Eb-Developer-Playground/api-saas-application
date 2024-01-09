@@ -4,25 +4,25 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { LandingPage } from './landing/landing.page';
-import { LoginPage } from './login/login.page';
-import { RegisterPage } from './register/register.page';
+import { LoginPage } from '../features/authentication/login/login.page';
+import { RegisterPage } from '../features/authentication/register/register.page';
+import { SharedModule } from '../shared/shared.module';
+import { PagesRoutingModule } from './pages.routing.module';
 
 
 @NgModule({
   declarations: [
-    LandingPage,
-    LoginPage,
-    RegisterPage,
+    LandingPage
+  
 
   ],
   exports: [
-    LandingPage,
-    LoginPage,
-    RegisterPage,
+    LandingPage
 
   ],
   imports: [
-    CommonModule
+    SharedModule,
+    PagesRoutingModule
   ]
 })
 export class PagesModule { }

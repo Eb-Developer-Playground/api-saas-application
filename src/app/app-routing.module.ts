@@ -1,9 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingPage } from './pages/landing/landing.page';
 
 const routes: Routes = [
-    { path: '', component: LandingPage }
+    {
+        path: 'auth',
+        loadChildren: () => import('./features/authentication/authentication.module').then(m => m.AuthenticationModule)
+    },
+    {
+        path: '',
+        loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
+    },
+    { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

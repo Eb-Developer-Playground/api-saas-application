@@ -1,0 +1,33 @@
+/* Styles for the features section */
+.features {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.feature-item {
+    background-color: #f9f9f9;
+    /* Change as needed */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.feature-item h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 1em;
+    color: #666;
+}
