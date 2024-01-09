@@ -5,7 +5,6 @@
 
 @include mat.core();
 
-
 // Define your primary, accent, and warn colors
 // Define your primary palette using the provided colors
 $theme-primary: mat.define-palette($theme-palette, 500);
