@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { JwtInterceptor } from './shared/_helpers/jwt.interceptor';
 import { ErrorInterceptor, fakeBackendProvider } from './shared/_helpers';
 import { AuthenticationModule } from './features/authentication/authentication.module';
+import { DashboardModule } from './features/dashboard/dashboard.module';
 
 
 
@@ -26,8 +27,9 @@ import { AuthenticationModule } from './features/authentication/authentication.m
     HttpClientModule,
     AppRoutingModule,
     AuthenticationModule,
+    DashboardModule,
     PagesModule,
-    SharedModule,
+    SharedModule
     
     
   ],

@@ -1,4 +1,12 @@
 <app-navbar *ngIf="shouldShowNavbar()"></app-navbar>
-<app-sidebar *ngIf="shouldShowSidebar()"></app-sidebar>
+<!-- TODO: UI fix for alert  -->
 <app-alert></app-alert>
-<router-outlet></router-outlet>
+<ng-container *ngIf="shouldShowSidebar(); else noSidebar">
+    <!-- If the sidebar should be shown -->
+    <app-sidebar></app-sidebar>
+</ng-container>
+
+<ng-template #noSidebar>
+    <!-- If the sidebar shouldn't be shown -->
+    <router-outlet></router-outlet>
+</ng-template>

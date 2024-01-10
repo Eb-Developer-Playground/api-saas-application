@@ -7,12 +7,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
 
 import { ButtonComponent } from './components/elements/button/button.component';
-import { NavbarComponent } from './components/containers/navbar/navbar.component';
-import { SidebarComponent } from './components/containers/sidebar/sidebar.component';
-import { HeroComponent } from './components/blocks/hero/hero.component';
-import { FeaturesComponent } from './components/blocks/features/features.component';
-import { HelpCenterComponent } from './components/blocks/help-center/help-center.component';
-import { FooterComponent } from './components/containers/footer/footer.component';
+import { NavbarComponent } from './components/blocks/navbar/navbar.component';
+import { SidebarComponent } from './components/blocks/sidebar/sidebar.component';
+import { HeroComponent } from './components/containers/hero/hero.component';
+import { FeaturesComponent } from './components/containers/features/features.component';
+import { HelpCenterComponent } from './components/containers/help-center/help-center.component';
+import { FooterComponent } from './components/blocks/footer/footer.component';
 import { AlertComponent } from './components/elements/alert/alert.component';
 import { RouterModule } from '@angular/router';
 

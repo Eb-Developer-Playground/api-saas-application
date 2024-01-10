@@ -48,7 +48,7 @@ export class AccountService {
         this.userSubject.next(emptyUser);
 
         // Navigate to the login page
-        this.router.navigate(['/account/login']);
+        this.router.navigate(['/auth/login']);
     }
 
     register(user: User) {
