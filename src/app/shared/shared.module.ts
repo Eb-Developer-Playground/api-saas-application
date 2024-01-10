@@ -15,6 +15,8 @@ import { HelpCenterComponent } from './components/containers/help-center/help-ce
 import { FooterComponent } from './components/blocks/footer/footer.component';
 import { AlertComponent } from './components/elements/alert/alert.component';
 import { RouterModule } from '@angular/router';
+import { SearchApiComponent } from './components/elements/search-api/search-api.component';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 
 @NgModule({
     declarations: [
@@ -25,7 +27,8 @@ import { RouterModule } from '@angular/router';
         FeaturesComponent,
         HelpCenterComponent,
         FooterComponent,
-        AlertComponent
+        AlertComponent,
+        SearchApiComponent
         // ... All other shared components, directives, pipes, etc. Tobe shared externally
     ],
 
@@ -34,7 +37,9 @@ import { RouterModule } from '@angular/router';
         FormsModule,
         ReactiveFormsModule,
         MaterialModule,
-        RouterModule // to use routerLink in navbar and sidebar 
+        RouterModule, // to use routerLinks
+        NgxMatSelectSearchModule
+
     ],
     exports: [
         CommonModule,
@@ -48,7 +53,8 @@ import { RouterModule } from '@angular/router';
         FeaturesComponent,
         HelpCenterComponent,
         FooterComponent,
-        AlertComponent
+        AlertComponent,
+        SearchApiComponent
         
         // ... All other shared components, directives, pipes, etc. to be used externally
     ]
