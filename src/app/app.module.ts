@@ -8,13 +8,13 @@ import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
 import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent } from './app.component';
 import { JwtInterceptor } from './shared/_helpers/jwt.interceptor';
 import { ErrorInterceptor, fakeBackendProvider } from './shared/_helpers';
 import { AuthenticationModule } from './features/authentication/authentication.module';
 import { DashboardModule } from './features/dashboard/dashboard.module';
+import { APICatalogueModule } from './features/api-catalogue/api-catalogue.module';
 
-
+import { AppComponent } from './app.component';
 
 
 @NgModule({
@@ -27,10 +27,10 @@ import { DashboardModule } from './features/dashboard/dashboard.module';
     HttpClientModule,
     AppRoutingModule,
     AuthenticationModule,
+    APICatalogueModule,
     DashboardModule,
     PagesModule,
     SharedModule
-    
     
   ],
   providers: [
