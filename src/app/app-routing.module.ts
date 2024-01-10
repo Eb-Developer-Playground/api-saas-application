@@ -11,6 +11,10 @@ const routes: Routes = [
         loadChildren: () => import('./features/dashboard/dashboard.module').then(m => m.DashboardModule)
     },
     {
+        path: 'api-catalogue',
+        loadChildren: () => import('./features/api-catalogue/api-catalogue.module').then(m => m.APICatalogueModule)
+    },
+    {
         path: '',
         loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
     },

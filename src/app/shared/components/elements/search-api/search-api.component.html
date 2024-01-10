@@ -1,0 +1,24 @@
+<!-- <input matInput type="text" placeholder="Search APIs" [(ngModel)]="searchQuery" (input)="applyFilter()">
+<button mat-button (click)="applyFilter()">Search</button> -->
+
+<h3>Search APIs</h3>
+<p>
+  <mat-form-field>
+    <mat-select [formControl]="apiCtrl" placeholder="API" (selectionChange)="onAPISelected($event)" #singleSelect>
+      <mat-option>
+        <ngx-mat-select-search 
+              [formControl]="apiFilterCtrl"
+              placeholderLabel="Search API..."
+              noEntriesFoundLabel="'no matching api found'"
+              ></ngx-mat-select-search>
+      </mat-option>
+
+      <mat-option *ngFor="let api of filteredApis | async" [value]="api">
+        {{api.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</p>
+<p>
+  Selected API: {{apiCtrl.value.name}}
+</p>

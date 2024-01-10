@@ -1,0 +1,13 @@
+.app-container {
+    // display: flex; // remove this causing content to not render correctly
+    height: 100vh;
+}
+
+.app-sidenav-content {
+    flex: 1;
+    padding: 20px;
+    /* Adjust padding to create space between content and sidebar */
+    // overflow-y: auto;
+    padding-left: 88px;
+    overflow: auto; 
+}
