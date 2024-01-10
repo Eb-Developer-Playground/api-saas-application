@@ -1,0 +1,26 @@
+/* Center container */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Adjust this if you want a different height */
+}
+
+/* Adjustments for the register card */
+.register-card {
+    width: 100%;
+    max-width: 400px;
+    /* Add any other styles as needed */
+}
+
+.full-width {
+    width: 100%;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
