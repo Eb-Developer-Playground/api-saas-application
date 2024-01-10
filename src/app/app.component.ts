@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { AccountService } from './shared/services/account.service';
-import { User } from './shared/models/user';
+import { Router } from '@angular/router';
+import { AccountService } from 'src/app/services/account.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-root',

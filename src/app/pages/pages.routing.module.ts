@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LandingPage } from './landing/landing.page';
 
-import { AuthGuard } from '../shared/_helpers';
+import { AuthGuard } from 'src/app/_helpers';
 
 const routes: Routes = [
     { path: '', component: LandingPage}

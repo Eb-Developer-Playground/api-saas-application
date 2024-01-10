@@ -4,8 +4,8 @@ import { MatSelect} from '@angular/material/select';
 
 import { ReplaySubject, Subject, take, takeUntil } from 'rxjs';
 
-import { Api } from 'src/app/shared/models';
-import { ApiService } from 'src/app/shared/services';
+import { Api } from 'src/app/models';
+import { ApiService } from 'src/app/services';
 
 @Component({
   selector: 'app-search-api',

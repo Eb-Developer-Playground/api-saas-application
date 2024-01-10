@@ -6,7 +6,7 @@
  * They encapsulate basic functionality and styling for HTML elements and UI primitives.
  * Examples include buttons, inputs, labels, etc.
  */
-export * from './elements/alert/alert.component';
+export * from '../../core/alert/alert.component';
 export * from './elements/button/button.component';
 export * from './elements/input/input.component';
 /**
@@ -15,11 +15,10 @@ export * from './elements/input/input.component';
 `*  =========
  * Blocks are composed of elements and represent more complex UI components.
  * They encapsulate certain UI functionalities or design patterns.
- * Examples could be Navbar/headers,  Cards, sidebars, cards, Forms, Carousel/Slider etc.`
+ * Examples could be Cards, Forms, Carousel/Slider etc.`
  */
-export * from './blocks/footer/footer.component';
-export * from './blocks/navbar/navbar.component';
-export * from './blocks/sidebar/sidebar.component';
+
+
 /**
  * ===========
  * Containers

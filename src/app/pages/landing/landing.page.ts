@@ -1,7 +1,7 @@
 import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AccountService } from 'src/app/shared/services/account.service';
+import { AccountService } from 'src/app/services/account.service';
 
 @Component({
   selector: 'app-landing',
