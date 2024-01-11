@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class SidebarService {
+  
   private toggleSidebarSubject = new Subject<void>();
   toggleSidebar$ = this.toggleSidebarSubject.asObservable();
 

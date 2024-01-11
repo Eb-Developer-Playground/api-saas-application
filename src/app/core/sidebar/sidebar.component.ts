@@ -35,4 +35,9 @@ export class SidebarComponent implements OnInit {
       this.isShowing = false;
     }
   }
+
+
+  logout(){
+    console.log('logged out')
+  }
 }
