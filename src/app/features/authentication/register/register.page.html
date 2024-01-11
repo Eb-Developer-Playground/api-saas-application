@@ -1,45 +1,39 @@
-<div class="center-container">
-    <mat-card class="register-card">
-        <mat-card-header>
-            <mat-card-title>Register</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <form [formGroup]="form" (ngSubmit)="onSubmit()">
-                <mat-form-field appearance="fill" class="full-width">
-                    <mat-label>First Name</mat-label>
-                    <input matInput formControlName="firstName"
-                        [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-                    <mat-error *ngIf="submitted && f.firstName.errors">First Name is required</mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="fill" class="full-width">
-                    <mat-label>Last Name</mat-label>
-                    <input matInput formControlName="lastName"
-                        [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-                    <mat-error *ngIf="submitted && f.lastName.errors">Last Name is required</mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="fill" class="full-width">
-                    <mat-label>Username</mat-label>
-                    <input matInput formControlName="username"
-                        [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-                    <mat-error *ngIf="submitted && f.username.errors">Username is required</mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="fill" class="full-width">
-                    <mat-label>Password</mat-label>
-                    <input matInput type="password" formControlName="password"
-                        [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-                    <mat-error *ngIf="submitted && f.password.errors">
-                        <div *ngIf="f.password.errors.required">Password is required</div>
-                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-                    </mat-error>
-                </mat-form-field>
-                <div class="button-group">
-                    <button mat-raised-button color="primary" [disabled]="loading">
-                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-                        Register
-                    </button>
-                    <a routerLink="../login" class="btn btn-link">Cancel</a>
+<div class="container">
+    <div class="left-section">
+    </div>
+    <div class="right-section">
+        <div class="register-container">
+            <form class="register-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+                <h2 class="register-title"><img src="../../../../assets/images/logos/Equity_Bank_Logo.png" alt="Logo"
+                        class="logo">
+                    Register</h2>
+                <div class="form-control">
+                    <i class="fas fa-user icon"></i>
+                    <input formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+                        type="text" placeholder="First Name" id="firstname" required>
                 </div>
+                <div class="form-control">
+                    <i class="fas fa-user icon"></i>
+                    <input formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+                        type="text" placeholder="Last Name" id="lastname" required>
+                </div>
+                <div class="form-control">
+                    <i class="fas fa-user icon"></i>
+                    <input formControlName="userName" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }"
+                        type="text" placeholder="User Name" id="username" required>
+                </div>
+                <div class="form-control">
+                    <i class="fas fa-lock icon"></i>
+                    <input [ngClass]="{ 'is-invalid': submitted && f.password.errors }" type="password"
+                        formControlName="password" placeholder="Password" id="password">
+                    <mat-error *ngIf="submitted && f.password.errors">Password is required</mat-error>
+                </div>
+
+                <button type="submit" [disabled]="loading">Register
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                </button>
+                <p class="login-link">Already have an account? <a [routerLink]="['/auth/login']">Login here</a></p>
             </form>
-        </mat-card-content>
-    </mat-card>
+        </div>
+    </div>
 </div>
