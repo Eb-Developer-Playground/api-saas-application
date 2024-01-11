@@ -8,7 +8,7 @@ const routes: Routes = [
     },
     {
         path: 'user',
-        loadChildren: () => import('./features/user-account-management/user-account-management.module').then(m => m.UserAccountManagementModule)
+        loadChildren: () => import('./features/user/user.module').then(m => m.UserModule)
     },
     {
         path: 'dashboard',

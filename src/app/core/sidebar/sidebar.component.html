@@ -9,7 +9,7 @@
 					*ngIf="isExpanded || isShowing">expand_more</mat-icon>
 			</mat-list-item>
 			<div class="submenu" [ngClass]="{'expanded': showSubmenu}" *ngIf="isShowing || isExpanded">
-				<a mat-list-item href="...">Dashboard</a>
+				<a mat-list-item [routerLink]="['/dashboard']">Dashboard</a>
 				<a mat-list-item [routerLink]="['/user/apikeys']">API keys</a>
 				<a mat-list-item [routerLink]="['/api-catalogue']">Api Catalogue</a>
 				<mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">

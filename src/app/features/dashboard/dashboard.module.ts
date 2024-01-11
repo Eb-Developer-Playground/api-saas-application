@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   imports: [
@@ -10,6 +11,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     DashboardRoutingModule,
     SharedModule
   ],
-  declarations: []
+  declarations: [
+    DashboardComponent
+  ]
 })
 export class DashboardModule { }

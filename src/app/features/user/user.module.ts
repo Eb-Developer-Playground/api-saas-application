@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedModule } from 'src/app/shared/shared.module';
-import { UserAccountManagementRoutingModule } from './user-account-management-routing';
+import { UserAccountManagementRoutingModule } from './user-routing';
 import { ProfileComponent } from './profile/profile.component';
-import { UserApiKeysComponent } from './user-api-keys/user-api-keys.component';
-import { UserBillingComponent } from './user-billing/user-billing.component';
+import { UserApiKeysComponent } from './user-apikeys/user-api-keys.component';
+import { BillingComponent } from './billing/billing.component';
 
 @NgModule({
   imports: [
@@ -16,7 +16,7 @@ import { UserBillingComponent } from './user-billing/user-billing.component';
   declarations: [
     ProfileComponent,
     UserApiKeysComponent,
-    UserBillingComponent
+    BillingComponent
   ]
 })
-export class UserAccountManagementModule { }
+export class UserModule { }
