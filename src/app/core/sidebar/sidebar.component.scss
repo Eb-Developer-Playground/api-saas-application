@@ -36,3 +36,11 @@
     // overflow-y: auto;
     overflow: auto; 
 }
+
+.logout-item {
+  cursor: pointer;
+}
+
+.logout-item:hover .mat-icon {
+  filter: brightness(0.8); /* Optional: Change brightness on hover for visual feedback */
+}

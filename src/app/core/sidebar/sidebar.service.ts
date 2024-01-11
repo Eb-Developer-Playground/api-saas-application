@@ -9,6 +9,8 @@ export class SidebarService {
   private toggleSidebarSubject = new Subject<void>();
   toggleSidebar$ = this.toggleSidebarSubject.asObservable();
 
+  constructor(){}
+
   toggleSidebar() {
     this.toggleSidebarSubject.next();
   }

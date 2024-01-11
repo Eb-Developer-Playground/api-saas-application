@@ -2,6 +2,8 @@
 import { OnInit, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { SidebarService } from './sidebar.service';
+import { Router } from '@angular/router';
+import { AccountService } from 'src/app/services';
 
 
 @Component({
@@ -16,7 +18,9 @@ export class SidebarComponent implements OnInit {
   isShowing = false;
   showSubSubMenu: boolean = false;
 
-  constructor(private sidebarService: SidebarService) {}
+  constructor(private sidebarService: SidebarService,
+              private router: Router,
+              private accountService: AccountService) {}
 
   ngOnInit() {
     this.sidebarService.toggleSidebar$.subscribe(() => {
@@ -38,6 +42,6 @@ export class SidebarComponent implements OnInit {
 
 
   logout(){
-    console.log('logged out')
+    this.accountService.logout()
   }
 }
