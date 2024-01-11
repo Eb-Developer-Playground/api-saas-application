@@ -12,7 +12,7 @@ import { SidebarService } from './sidebar.service';
 export class SidebarComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav | any;
   isExpanded = false;
-  showSubmenu: boolean = false;
+  showSubmenu: boolean = true;
   isShowing = false;
   showSubSubMenu: boolean = false;
 
