@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,200');
 @import 'src/theme';
 
-$primary-color:  map-get($theme-primary, 500); //#6164d8;
-$secondary-color: map-get($theme-accent, A400); //#666be4;
+$primary-color:  map-get($theme-primary, 500);
+$secondary-color: map-get($theme-accent, A400);
 $tertiary-color: map-get($theme-accent, A100);
 $text-color: white;
 $shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -49,7 +49,7 @@ button {
 
 .background-left {
   @extend .background;
-   z-index: -1;
+  z-index: -1;
   background: red;
   background: $primary-color;
 }
@@ -128,5 +128,111 @@ button {
     -webkit-transform: translateX(0);
             transform: translateX(0);
     opacity: 1;
+  }
+}
+
+/* Media query for smaller screens upto 500px width max*/
+@media (max-width: 500px)  {
+  .hero-image {
+    display: none,
+    
+  }
+
+  .hero-right {
+    display: none;
+  }
+}
+
+@media (width: 768px) and (height: 1024px)  {
+  .hero-right {
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .hero-image {
+    position: relative;
+    z-index: 88;
+    width: 95%;
+    height: 95%;
+    max-height: none;
+  }
+  
+}
+
+
+/* Media query for smaller screens upto 500px width max*/
+@media (max-width: 1024px)  {
+  .hero-right {
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .hero-image {
+    position: relative;
+    z-index: 88;
+    width: 95%;
+    height: 95%;
+    max-height: none;
+  }
+  
+}
+
+
+@media (width: 280px) and (height: 653px)  {
+  .hero-right {
+    display: none,
+  }
+  
+  .hero-image {
+    display: none;
+  }
+  
+}
+
+
+@media (width: 1024px) and (height: 600px)  {
+  .hero-right {
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .hero-image {
+    position: relative;
+    z-index: 88;
+    width: 95%;
+    height: 95%;
+    max-height: none;
+  }
+}
+
+
+@media (width: 1280px) and (height: 800px)  {
+  .hero-right {
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .hero-image {
+    position: relative;
+    z-index: 88;
+    width: 95%;
+    height: 95%;
+    max-height: none;
   }
 }
