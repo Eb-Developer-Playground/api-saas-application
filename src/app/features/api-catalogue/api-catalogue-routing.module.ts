@@ -5,8 +5,8 @@ import { ApiDetailComponent } from './api-detail/api-detail.component';
 
 
 const routes: Routes = [
-    { path: '', component: ApiCatalogueListComponent },
-    { path: 'detail', component: ApiDetailComponent }
+    { path: 'catalogue', component: ApiCatalogueListComponent },
+    { path: 'detail/:id', component: ApiDetailComponent }
 ];
 
 @NgModule({
