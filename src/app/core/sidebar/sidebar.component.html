@@ -12,13 +12,13 @@
 				<a mat-list-item [routerLink]="['/dashboard']">Dashboard</a>
 				<a mat-list-item [routerLink]="['/user/apikeys']">API keys</a>
 				<a mat-list-item [routerLink]="['/apis/catalogue']">Api Catalogue</a>
-				<mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
+				<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
 					<span class="full-width" *ngIf="isExpanded || isShowing">Settings</span>
-					<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}"
+					<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}"
 						*ngIf="isExpanded || isShowing">expand_more</mat-icon>
 				</mat-list-item>
 
-				<div class="submenu" [ngClass]="{'expanded': showSubSubMenu}" *ngIf="isShowing || isExpanded">
+				<div class="submenu" [ngClass]="{'expanded': showSubmenu}" *ngIf="isShowing || isExpanded">
 					<mat-list-item [routerLink]="['/user/profile']">Profile</mat-list-item>
 					<mat-list-item [routerLink]="['/user/billing']">Billing</mat-list-item>
 				</div>
