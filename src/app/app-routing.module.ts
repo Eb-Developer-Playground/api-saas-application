@@ -15,7 +15,7 @@ const routes: Routes = [
         loadChildren: () => import('./features/dashboard/dashboard.module').then(m => m.DashboardModule)
     },
     {
-        path: 'api-catalogue',
+        path: 'apis',
         loadChildren: () => import('./features/api-catalogue/api-catalogue.module').then(m => m.APICatalogueModule)
     },
     {
