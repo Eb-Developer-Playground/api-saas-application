@@ -3,7 +3,7 @@
 
 <h3>Search APIs</h3>
 <p>
-  <mat-form-field>
+  <mat-form-field appearance="outline">
     <mat-select [formControl]="apiCtrl" placeholder="API" (selectionChange)="onAPISelected($event)" #singleSelect>
       <mat-option>
         <ngx-mat-select-search 
@@ -19,6 +19,6 @@
     </mat-select>
   </mat-form-field>
 </p>
-<p>
+<!-- <p>
   Selected API: {{apiCtrl.value.name}}
-</p>
+</p> -->
