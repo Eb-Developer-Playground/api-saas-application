@@ -43,7 +43,9 @@
               "src/theme.scss",
               "src/_palette.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/redoc/bundles/redoc.standalone.js"
+            ]
           },
           "configurations": {
             "production": {
