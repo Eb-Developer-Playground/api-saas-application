@@ -3,6 +3,7 @@
   width: 100%;
 }
 
+
 .menu-button {
   transition: 300ms ease-in-out;
   transform: rotate(0deg);
@@ -25,9 +26,10 @@
 }
 
 .app-container {
-    // display: flex; // remove this causing content to not render correctly
-    height: 100vh;
+  display: flow-root;
+  height: 100vh;
 }
+
 
 .app-sidenav-content {
     flex: 1;
@@ -43,4 +45,19 @@
 
 .logout-item:hover .mat-icon {
   filter: brightness(0.8); /* Optional: Change brightness on hover for visual feedback */
+}
+
+
+/* Media query for responsiveness */
+@media (max-width: 412px) {
+  .app-sidenav {
+    width: 15%; /* Set a different width for the sidenav in mobile mode */
+  }
+}
+
+/* Media query for responsiveness */
+@media (min-width: 500px) {
+  .app-sidenav {
+    width: 15%; /* Set a different width for the sidenav in mobile mode */
+  }
 }
