@@ -58,11 +58,6 @@ $primary-color: map-get($theme-primary, 500);
 }
 
 
-@media (min-width: 375px){
-  .flex-container {
-    display: none !important;
-  }
-}
 /* Media query for responsiveness */
 @media (max-width: 412px) {
   .app-sidenav {
