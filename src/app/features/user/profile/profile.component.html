@@ -1,8 +1,22 @@
 <mat-toolbar color="primary">
-  <span>Profile</span>
+  <span>User Profile</span>
 </mat-toolbar>
 
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>User Profile</mat-card-title>
+  </mat-card-header>
 
-<p>
-  profile works!
-</p>
+  <mat-card-content>
+    <div class="user-details">
+      <div><strong>User ID:</strong> {{ currentUser?.id }}</div>
+      <div><strong>Username:</strong> {{ currentUser?.username }}</div>
+      <div><strong>Name:</strong> {{ currentUser?.firstName }} {{ currentUser?.lastName }}</div>
+      <div><strong>Email:</strong> {{ currentUser?.email }}</div>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <!-- <button mat-raised-button color="accent" (click)="openEditDialog()">Edit</button> -->
+  </mat-card-actions>
+</mat-card>
