@@ -14,6 +14,7 @@ import { FeaturesComponent } from './components/containers/features/features.com
 import { HelpCenterComponent } from './components/containers/help-center/help-center.component';
 import { FooterComponent } from '../core/footer/footer.component';
 import { SearchApiComponent } from './components/elements/search-api/search-api.component';
+import { UserApiUsageComponent } from './components/containers/charts/user/api-usage/user-api-usage.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { SearchApiComponent } from './components/elements/search-api/search-api.
         FeaturesComponent,
         HelpCenterComponent,
         FooterComponent,
-        SearchApiComponent
+        SearchApiComponent,
+        UserApiUsageComponent
         // ... All other shared components, directives, pipes, etc. Tobe shared externally
     ],
 
@@ -46,7 +48,8 @@ import { SearchApiComponent } from './components/elements/search-api/search-api.
         FeaturesComponent,
         HelpCenterComponent,
         FooterComponent,
-        SearchApiComponent
+        SearchApiComponent,
+        UserApiUsageComponent
         
         // ... All other shared components, directives, pipes, etc. to be used externally
     ]
