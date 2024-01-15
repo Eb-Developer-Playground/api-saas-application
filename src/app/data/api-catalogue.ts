@@ -57,7 +57,7 @@ export const apiCatalogueDummyData = [
     {
         id:6,
         name: 'Customer Authentication API',
-        icon: 'assets/images/icons/authentications.png',
+        icon: 'assets/images/icons/authentication.png',
         category: 'Security Services',
         description: 'Authenticate customers securely using multi-factor authentication methods.',
         usageGuide: 'Implementation guide for customer authentication and handling authentication errors.',
