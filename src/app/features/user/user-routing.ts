@@ -7,7 +7,7 @@ import { SubscribedApisComponent } from './subscribed-apis/subscribed-apis.compo
 
 
 const routes: Routes = [
-    { path: 'profile', component: ProfileComponent },
+    { path: 'account', component: ProfileComponent },
     { path: 'apikeys', component: UserApiKeysComponent},
     { path: 'billing', component: BillingComponent},
     { path: 'subscribed-apis', component: SubscribedApisComponent}
