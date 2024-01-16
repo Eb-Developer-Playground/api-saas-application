@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
-import { Api } from 'src/app/models';
+import { Api, ApiKey } from 'src/app/models';
 
 import { subscribedApisUserDummyData } from 'src/app/data';
 import { ModalService } from 'src/app/services/ui/modal.service';
@@ -34,10 +34,11 @@ export class TableSubscribedApisComponent implements OnInit, AfterViewInit {
     this.subscribedAPIsDataSource.sort = this.sort;
   }
 
-  openApiKeyModal(row: any): void {
+  openApiKeyModal(row: Api): void {
     const apiKey = this.apiKeyService.generateApiKey();
-    row.apiKey = apiKey;
 
+    this.generateApiKey(row)
+    
     const config = {
       data: { row, apiKey },
       width: '400px',
@@ -46,7 +47,18 @@ export class TableSubscribedApisComponent implements OnInit, AfterViewInit {
     this.modalService.openModal(ApiKeyFormComponent, config).subscribe(result => {
       console.log('Modal closed with result:', result);
     });
+  }
 
 
+  generateApiKey(api: Api): void {
+    const newApiKey: ApiKey = {
+      name: api.name, // Provide a default name or prompt the user for input
+      secretKey: this.apiKeyService.generateApiKey(),
+      tracking: false,
+      created: new Date().toLocaleDateString(),
+      lastUsed: 'Never',
+    };
+
+    this.apiKeyService.addApiKey(newApiKey);
   }
 }

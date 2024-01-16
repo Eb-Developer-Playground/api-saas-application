@@ -1,9 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { apiKeyList } from 'src/app/data/api-keys-list';
 
 import { ApiKey } from 'src/app/models';
+
+import { ApiKeyService } from 'src/app/services';
 
 @Component({
   selector: 'app-user-api-keys',
@@ -12,12 +15,15 @@ import { ApiKey } from 'src/app/models';
 })
 export class UserApiKeysComponent implements OnInit {
   displayedColumns: string[] = ['name', 'secretKey', 'tracking', 'created', 'lastUsed', 'actions'];
-  dataSource = new MatTableDataSource(apiKeyList);
+  dataSource = new MatTableDataSource<ApiKey>();
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
-  constructor() { }
+  @ViewChild(MatSort) sort!: MatSort;
+  
+  constructor(private apiKeyService: ApiKeyService) { }
 
   ngOnInit() {
+    this.dataSource.data = this.apiKeyService.getAllApiKeys().reverse();
   }
 
   ngAfterViewInit() {
@@ -29,19 +35,24 @@ export class UserApiKeysComponent implements OnInit {
     console.log('Edit clicked for:', apiKey);
   }
 
+
   deleteApiKey(apiKey: ApiKey): void {
     const apiKeyName = apiKey.name;
-    const indexToDelete = apiKeyList.findIndex(apiKey => apiKey.name === apiKeyName);
+    this.apiKeyService.deleteApiKey(apiKeyName);
+    this.dataSource.data = this.apiKeyService.getAllApiKeys();
+  }
   
-    if (indexToDelete !== -1) {
-      // If the API key with the given name is found, remove it from the array
-      apiKeyList.splice(indexToDelete, 1);
-      // Update the dataSource with the modified apiKeyList
-      this.dataSource = new MatTableDataSource(apiKeyList);
-      this.dataSource.paginator = this.paginator;
-    } else {
-      console.log(`API key '${apiKeyName}' not found.`);
-    }
+  generateApiKey(): void {
+    const newApiKey: ApiKey = {
+      name: 'New API Key', // Provide a default name or prompt the user for input
+      secretKey: this.apiKeyService.generateApiKey(),
+      tracking: false,
+      created: new Date().toLocaleDateString(),
+      lastUsed: 'Never',
+    };
+
+    this.apiKeyService.addApiKey(newApiKey);
+    this.dataSource.data = this.apiKeyService.getAllApiKeys();
   }
   
 

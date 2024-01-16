@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { ApiKeyService } from 'src/app/services';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class ApiKeyFormComponent {
   constructor(
     public dialogRef: MatDialogRef<ApiKeyFormComponent>,
     private apiKeyService: ApiKeyService,
+    private router: Router,
     private clipboard: Clipboard, // Inject the Clipboard service
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
@@ -28,5 +30,14 @@ export class ApiKeyFormComponent {
     this.clipboard.copy(apiKey);
     // Optionally, provide user feedback (e.g., show a message)
     console.log('API Key copied to clipboard:', apiKey);
+  }
+
+  viewApiKeysAndCloseModal(): void {
+    this.router.navigate(['/user/apikeys']);
+    this.dialogRef.close();
+  }
+  
+  closeModal(): void {
+    this.dialogRef.close();
   }
 }
