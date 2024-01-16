@@ -1,0 +1,212 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>api-monetization documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="./" class="navbar-brand">api-monetization documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1>ApiMonetization</h1>
+<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 16.2.11.</p>
+<h2>Development server</h2>
+<p>Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The application will automatically reload if you change any of the source files.</p>
+<h2>Code scaffolding</h2>
+<p>Run <code>ng generate component component-name</code> to generate a new component. You can also use <code>ng generate directive|pipe|service|class|guard|interface|enum|module</code>.</p>
+<h2>Build</h2>
+<p>Run <code>ng build</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory.</p>
+<h2>Localization Tasks</h2>
+<p>ng extract-i18n --output-path src/locale</p>
+<p><strong>build app with locales</strong></p>
+<p>ng build --localize </p>
+<h2>Running unit tests</h2>
+<p>Run <code>ng test</code> to execute the unit tests via <a href="https://karma-runner.github.io">Karma</a>.</p>
+<h2>Running end-to-end tests</h2>
+<p>Run <code>ng e2e</code> to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.</p>
+<h2>Further help</h2>
+<p>To get more help on the Angular CLI use <code>ng help</code> or go check out the <a href="https://angular.io/cli">Angular CLI Overview and Command Reference</a> page.</p>
+<h1>Mock documentation swagger files</h1>
+<ol>
+<li><a href="https://gist.githubusercontent.com/pmutua/4d52a52040a28522499fa8f5a617a051/raw/5eecc568f8a21b1615e65982e5588eab8d5175a4/docs.account-balance.swagger.json">https://gist.githubusercontent.com/pmutua/4d52a52040a28522499fa8f5a617a051/raw/5eecc568f8a21b1615e65982e5588eab8d5175a4/docs.account-balance.swagger.json</a></li>
+<li><a href="https://gist.githubusercontent.com/pmutua/07bb41f2464772c13e0c3bd93a5cb8fd/raw/02836cb00ed98ed1d5e08b8b08abb864f0575c79/docs.transaction-history.swagger.json">https://gist.githubusercontent.com/pmutua/07bb41f2464772c13e0c3bd93a5cb8fd/raw/02836cb00ed98ed1d5e08b8b08abb864f0575c79/docs.transaction-history.swagger.json</a></li>
+<li><a href="https://gist.githubusercontent.com/pmutua/086307cfccd2dc2e3be7fa5fd6f34e0b/raw/2773326655a532d39aedd8d5a685903c12731c11/docs.payment-processing.json">https://gist.githubusercontent.com/pmutua/086307cfccd2dc2e3be7fa5fd6f34e0b/raw/2773326655a532d39aedd8d5a685903c12731c11/docs.payment-processing.json</a></li>
+<li><a href="https://gist.githubusercontent.com/pmutua/48ad1a14c322b773cf1811ffccfadfad/raw/ebfd16409f7589931a8c74867362ccadd06e707e/docs.card-management.swagger.json">https://gist.githubusercontent.com/pmutua/48ad1a14c322b773cf1811ffccfadfad/raw/ebfd16409f7589931a8c74867362ccadd06e707e/docs.card-management.swagger.json</a></li>
+<li><a href="https://gist.githubusercontent.com/pmutua/072c2fab71ad85165beb67d8a1953872/raw/6a2215ac628121d526aa824f57c31563233730ae/docs.loan-management.json">https://gist.githubusercontent.com/pmutua/072c2fab71ad85165beb67d8a1953872/raw/6a2215ac628121d526aa824f57c31563233730ae/docs.loan-management.json</a></li>
+<li><a href="https://gist.githubusercontent.com/pmutua/3573718ab03cbda0186eb6c435b6831f/raw/7ce7b5aba9507ba8c1299727e7462fc203707759/docs.customer-authentication.swagger.json">https://gist.githubusercontent.com/pmutua/3573718ab03cbda0186eb6c435b6831f/raw/7ce7b5aba9507ba8c1299727e7462fc203707759/docs.customer-authentication.swagger.json</a></li>
+<li><a href="https://gist.githubusercontent.com/pmutua/6c88902c01673f116aa829224f755b5b/raw/4a6498320963602af761959c6173e858a85c8e4e/kyc-verification.swagger.json">https://gist.githubusercontent.com/pmutua/6c88902c01673f116aa829224f755b5b/raw/4a6498320963602af761959c6173e858a85c8e4e/kyc-verification.swagger.json</a></li>
+<li><a href="https://gist.githubusercontent.com/pmutua/00154929bc703ee8a56f5b59bbf19ed5/raw/945299fbe8581c8a5904959a27d9252946864b1c/docs.credit-score.swagger.json">https://gist.githubusercontent.com/pmutua/00154929bc703ee8a56f5b59bbf19ed5/raw/945299fbe8581c8a5904959a27d9252946864b1c/docs.credit-score.swagger.json</a></li>
+<li><a href="https://gist.githubusercontent.com/pmutua/58e49f6b1f0326c90e773deed1a48345/raw/d9ef990734d12a8d5a7fdecfa1f138676ef0e6b2/docs.foreign-exchange.swagger.json">https://gist.githubusercontent.com/pmutua/58e49f6b1f0326c90e773deed1a48345/raw/d9ef990734d12a8d5a7fdecfa1f138676ef0e6b2/docs.foreign-exchange.swagger.json</a></li>
+<li><a href="https://gist.githubusercontent.com/pmutua/e54f370403c3e6de5fcd9ef2ae3b996f/raw/22ab384e53fc8b4094796253568ee4adf8cf8ee7/docs.atm-locator.swagger.json">https://gist.githubusercontent.com/pmutua/e54f370403c3e6de5fcd9ef2ae3b996f/raw/22ab384e53fc8b4094796253568ee4adf8cf8ee7/docs.atm-locator.swagger.json</a></li>
+<li><a href="https://gist.githubusercontent.com/pmutua/aa8a11ecc449f233e9bbe469ccce2d1b/raw/51db0e752cda8b66a172e896351a1ece82918814/docs.fraud-detection.swagger.json">https://gist.githubusercontent.com/pmutua/aa8a11ecc449f233e9bbe469ccce2d1b/raw/51db0e752cda8b66a172e896351a1ece82918814/docs.fraud-detection.swagger.json</a></li>
+<li><a href="https://gist.githubusercontent.com/pmutua/ec547343e71de8ca14e1ed420064527e/raw/29f44adad52a0a9dc243f7468ca2aec30ba3c1fd/docs.budgeting-savings.swagger.json">https://gist.githubusercontent.com/pmutua/ec547343e71de8ca14e1ed420064527e/raw/29f44adad52a0a9dc243f7468ca2aec30ba3c1fd/docs.budgeting-savings.swagger.json</a> </li>
+<li><a href="https://gist.githubusercontent.com/pmutua/1a7ad1aa0054c2de8ad5396a0ea57162/raw/134337cd3416ae7564de48f7f0a35fb9f6f417a9/docs.morgage-calculator.swagger.json">https://gist.githubusercontent.com/pmutua/1a7ad1aa0054c2de8ad5396a0ea57162/raw/134337cd3416ae7564de48f7f0a35fb9f6f417a9/docs.morgage-calculator.swagger.json</a></li>
+<li><a href="https://gist.githubusercontent.com/pmutua/50687eaf8717a6dd8c7aa360c2f5a3f2/raw/2adf9799bba32ebfd68d0bd43073249285f8602b/docs.investment-portfollio.swagger.json">https://gist.githubusercontent.com/pmutua/50687eaf8717a6dd8c7aa360c2f5a3f2/raw/2adf9799bba32ebfd68d0bd43073249285f8602b/docs.investment-portfollio.swagger.json</a></li>
+<li><a href="https://gist.githubusercontent.com/pmutua/591d2b2615a192fd6273479a351d29e9/raw/89c1e4fa722df1cd04d12e9e55b14c0918d4fa9f/docs.bill-payment-api.swagger.json">https://gist.githubusercontent.com/pmutua/591d2b2615a192fd6273479a351d29e9/raw/89c1e4fa722df1cd04d12e9e55b14c0918d4fa9f/docs.bill-payment-api.swagger.json</a></li>
+<li><a href="https://gist.githubusercontent.com/pmutua/c44827ec92f238ec537d5f2428eca9a7/raw/bcd3834075a3b3b2a25634a8d79b235ef6e97fce/docs.branch-locator.swagger.json">https://gist.githubusercontent.com/pmutua/c44827ec92f238ec537d5f2428eca9a7/raw/bcd3834075a3b3b2a25634a8d79b235ef6e97fce/docs.branch-locator.swagger.json</a></li>
+<li><a href="https://gist.githubusercontent.com/pmutua/55a30f345ea01f91c952c0f42d9b99f7/raw/ed20d7d852afe393a7304f3cf4579a6d40df238c/credit-card-reward.swagger.json">https://gist.githubusercontent.com/pmutua/55a30f345ea01f91c952c0f42d9b99f7/raw/ed20d7d852afe393a7304f3cf4579a6d40df238c/credit-card-reward.swagger.json</a></li>
+<li><a href="https://gist.githubusercontent.com/pmutua/0eb6c6c1b10decd1e8e8ea9251eb6f2a/raw/caa12571b77e07f5bc999b86e8c5f93b73410a37/docs.chat-bot-assistance-api.swagger.json">https://gist.githubusercontent.com/pmutua/0eb6c6c1b10decd1e8e8ea9251eb6f2a/raw/caa12571b77e07f5bc999b86e8c5f93b73410a37/docs.chat-bot-assistance-api.swagger.json</a></li>
+<li><a href="https://gist.githubusercontent.com/pmutua/82490ceec6e895d56872203ffc82b5d4/raw/51fc915c716e883e542d6b3f61bac08d85bb2cca/docs.loan-eligibility-api.swagger.json">https://gist.githubusercontent.com/pmutua/82490ceec6e895d56872203ffc82b5d4/raw/51fc915c716e883e542d6b3f61bac08d85bb2cca/docs.loan-eligibility-api.swagger.json</a></li>
+<li><a href="https://gist.githubusercontent.com/pmutua/399fe8fe82613eb3a7e4c1aabf080d83/raw/ea56d139e5a2e256b941840a387cc4f5b47891ad/docs.currency-conversion.swagger.json">https://gist.githubusercontent.com/pmutua/399fe8fe82613eb3a7e4c1aabf080d83/raw/ea56d139e5a2e256b941840a387cc4f5b47891ad/docs.currency-conversion.swagger.json</a></li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
