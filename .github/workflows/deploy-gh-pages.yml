@@ -1,29 +1,24 @@
-# name: Deploy to GitHub Pages
+name: Build and Deploy
+on:
+    push:
+      branches:
+        - main
+permissions:
+  contents: write
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
 
-# on:
-#   push:
-#     branches:
-#       - main
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: |
+          npm ci
+          npm run compodoc
 
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v2
-
-#       - name: Set up Git
-#         run: |
-#           git config --global user.email "pmutua@automation.io"
-#           git config --global user.name "pmutua"
-
-#       - name: Deploy to GitHub Pages
-#         run: |
-#           mkdir gh-pages
-#           cp -r documentation/* gh-pages
-#           git checkout --orphan gh-pages
-#           git --work-tree=gh-pages add --all
-#           git --work-tree=gh-pages commit -m "Deploy documentation to GitHub Pages"
-#           git push origin HEAD:gh-pages --force
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: documentation
