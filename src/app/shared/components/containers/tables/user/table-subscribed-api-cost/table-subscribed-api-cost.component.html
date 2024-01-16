@@ -1,5 +1,5 @@
 <mat-card class="table-card">
-  <mat-card-title>Subscribed APIs Overview</mat-card-title>
+  <mat-card-title>Subscribed APIs Bills Overview</mat-card-title>
   <mat-card-content>
     <mat-table [dataSource]="subscribedAPIsDataSource" matSort>
 
@@ -18,14 +18,17 @@
       </ng-container>
 
       <ng-container matColumnDef="subscriptionCost">
-        <mat-header-cell *matHeaderCellDef> Subscription Cost </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
         <mat-cell *matCellDef="let row"> Ksh {{row.cost.toLocaleString()}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="generateApiKey">
-        <mat-header-cell *matHeaderCellDef> Generate New API Key </mat-header-cell>
+      <ng-container matColumnDef="payment">
+        <mat-header-cell *matHeaderCellDef> Make Payment </mat-header-cell>
         <mat-cell *matCellDef="let row">
-          <button mat-button (click)="generateApiKey(row)">Generate</button>
+          <button mat-raised-button (click)="makePayment(row)">
+            <mat-icon>payment</mat-icon>
+            Pay
+          </button>
         </mat-cell>
       </ng-container>
 
