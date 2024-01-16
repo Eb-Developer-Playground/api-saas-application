@@ -15,6 +15,9 @@ import { HelpCenterComponent } from './components/containers/help-center/help-ce
 import { FooterComponent } from '../core/footer/footer.component';
 import { SearchApiComponent } from './components/elements/search-api/search-api.component';
 import { UserApiUsageComponent } from './components/containers/charts/user/api-usage/user-api-usage.component';
+import { TableSubscribedApisComponent } from './components/containers/tables/user/table-subscribed-apis/table-subscribed-apis.component';
+import { ApiKeyFormComponent } from './components/blocks/forms/api-key-form/api-key-form.component';
+import { TableSubscribedApiCostComponent } from './components/containers/tables/user/table-subscribed-api-cost/table-subscribed-api-cost.component';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { UserApiUsageComponent } from './components/containers/charts/user/api-u
         HelpCenterComponent,
         FooterComponent,
         SearchApiComponent,
-        UserApiUsageComponent
+        UserApiUsageComponent,
+        TableSubscribedApisComponent,
+        TableSubscribedApiCostComponent,
+        ApiKeyFormComponent
         // ... All other shared components, directives, pipes, etc. Tobe shared externally
     ],
 
@@ -49,7 +55,10 @@ import { UserApiUsageComponent } from './components/containers/charts/user/api-u
         HelpCenterComponent,
         FooterComponent,
         SearchApiComponent,
-        UserApiUsageComponent
+        UserApiUsageComponent,
+        TableSubscribedApisComponent,
+        TableSubscribedApiCostComponent,
+        ApiKeyFormComponent
         
         // ... All other shared components, directives, pipes, etc. to be used externally
     ]
