@@ -6,7 +6,7 @@
  * They encapsulate basic functionality and styling for HTML elements and UI primitives.
  * Examples include buttons, inputs, labels, etc.
  */
-export * from '../../core/alert/alert.component';
+export * from './containers/alert/alert.component';
 export * from './elements/button/button.component';
 export * from './elements/input/input.component';
 /**
