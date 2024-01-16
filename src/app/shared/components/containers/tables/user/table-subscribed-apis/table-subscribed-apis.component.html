@@ -1,5 +1,5 @@
 <mat-card class="table-card">
-  <mat-card-title>Subscribed APIs Overview</mat-card-title>
+  <mat-card-title>Subscribed APIs Cost</mat-card-title>
   <mat-card-content>
     <mat-table [dataSource]="subscribedAPIsDataSource" matSort>
 
@@ -20,7 +20,10 @@
       <ng-container matColumnDef="generateApiKey">
         <mat-header-cell *matHeaderCellDef> Generate New API Key </mat-header-cell>
         <mat-cell *matCellDef="let row">
-          <button mat-button (click)="openApiKeyModal(row)">Generate</button>
+          <button mat-raised-button (click)="openApiKeyModal(row)">
+            <mat-icon>vpn_key</mat-icon>
+            Generate Key
+          </button>
         </mat-cell>
       </ng-container>
 

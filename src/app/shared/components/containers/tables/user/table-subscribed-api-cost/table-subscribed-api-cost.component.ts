@@ -7,6 +7,8 @@ import { Api } from 'src/app/models';
 
 import { subscribedApisUserDummyData } from 'src/app/data';
 
+import { AlertService } from 'src/app/services';
+
 
 @Component({
   selector: 'app-table-subscribed-api-cost',
@@ -15,12 +17,12 @@ import { subscribedApisUserDummyData } from 'src/app/data';
 })
 export class TableSubscribedApiCostComponent implements OnInit, AfterViewInit {
   subscribedAPIs: Api[] = subscribedApisUserDummyData;
-  displayedColumns: string[] = ['name', 'description', 'subscriptionCost', 'generateApiKey'];
+  displayedColumns: string[] = ['name', 'description', 'subscriptionCost', 'payment'];
   subscribedAPIsDataSource!: MatTableDataSource<Api>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-
-  constructor() { }
+  totalCost: number = 0;
+  constructor(private alertServce: AlertService) { }
 
   ngOnInit() {
     this.subscribedAPIsDataSource = new MatTableDataSource<Api>(this.subscribedAPIs);
@@ -30,8 +32,19 @@ export class TableSubscribedApiCostComponent implements OnInit, AfterViewInit {
     this.subscribedAPIsDataSource.paginator = this.paginator;
     this.subscribedAPIsDataSource.sort = this.sort;
   }
+  
+  // Make payment for the total cost
+  makePayment(row: any) {
+    // Implement the logic to make the total payment
+    // You can use this.subscribedAPIsDataSource.data to access the list of subscribed APIs
+    // console.log('Making total payment. Total cost:', this.totalCost);
+    this.alertServce.success('Payment Successful')
+  }
 
-  generateApiKey(row: any){}
+  // Calculate the total cost
+  calculateTotalCost() {
+    this.totalCost = this.subscribedAPIsDataSource.data.reduce((total, api) => total + 0, 0);
+  }
 
 
 }
