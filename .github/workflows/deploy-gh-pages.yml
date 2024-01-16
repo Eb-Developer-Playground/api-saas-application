@@ -12,6 +12,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Set up Git
+        run: |
+          git config --global user.email "pmutua@automation.io"
+          git config --global user.name "pmutua"
+
       - name: Deploy to GitHub Pages
         run: |
           mkdir gh-pages
