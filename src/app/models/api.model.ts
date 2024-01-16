@@ -8,4 +8,8 @@ export interface Api {
     features: string[];
     pricingPlan: string;
     swaggerJsonFile?: string;
+    endpoint?: string;
+    version?: string;
+    cost?: number;
+    totalRequests?: number;
 }
