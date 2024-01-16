@@ -30,9 +30,13 @@ export class AccountService {
 
 
     public isLoggedIn(): boolean {
-        return !!this.userValue.token;
+        if(this.user){
+            return true
+        } else {
+            return false
+        }
     }
-    
+
     login(username: string, password: string) {
         return this.http.post<User>(`${environment.apiUrl}/users/authenticate`, { username, password })
             .pipe(map(user => {
