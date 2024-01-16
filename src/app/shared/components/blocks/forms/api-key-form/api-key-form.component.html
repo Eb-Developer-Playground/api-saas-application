@@ -1,0 +1,22 @@
+<div class="api-key-modal-container">
+
+  <h2 mat-dialog-title>{{ data.title }}</h2>
+
+  <div mat-dialog-content>
+    <p class="api-key-label">Copy the generated API Key</p>
+    <div class="api-key-input-container">
+      <input type="text" class="api-key-input" [value]="data.apiKey" readonly>
+      <button mat-icon-button (click)="copyToClipboard(data.apiKey)">
+        <mat-icon>content_copy</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <!-- <button mat-button color="primary" (click)="copyToClipboard(data.apiKey)">
+      <mat-icon>content_copy</mat-icon> Copy to Clipboard
+    </button> -->
+    <button mat-button mat-dialog-close color="accent">Close</button>
+  </div>
+
+</div>

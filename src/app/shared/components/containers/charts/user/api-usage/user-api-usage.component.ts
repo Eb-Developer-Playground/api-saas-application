@@ -10,7 +10,7 @@ import { Api } from 'src/app/models';
 
 
 @Component({
-  selector: 'app-chart-api-usage',
+  selector: 'app-charts-api-usage',
   templateUrl: './user-api-usage.component.html',
   styleUrls: ['./user-api-usage.component.scss']
 })
@@ -30,18 +30,10 @@ export class UserApiUsageComponent implements OnInit, AfterViewInit {
   @ViewChild('apiMetricsChart3') chart3Canvas!: ElementRef;
   @ViewChild('apiMetricsChart4') chart4Canvas!: ElementRef;
 
-  displayedColumns: string[] = ['name', 'category', 'description', 'usageGuide', 'features', 'pricingPlan'];
-  subscribedAPIsDataSource!: MatTableDataSource<Api>;
-
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
-
   constructor() { }
 
   ngOnInit(): void {
-    this.subscribedAPIsDataSource = new MatTableDataSource<Api>(this.subscribedAPIs);
-    this.subscribedAPIsDataSource.paginator = this.paginator;
-    this.subscribedAPIsDataSource.sort = this.sort;
+
   }
 
   ngAfterViewInit(): void {
@@ -83,7 +75,7 @@ export class UserApiUsageComponent implements OnInit, AfterViewInit {
           x: {
             title: {
               display: true,
-              text: 'APIs',
+              text: 'Subsribed APIs',
             },
           },
         },

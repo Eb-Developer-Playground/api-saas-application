@@ -6,7 +6,7 @@
         <mat-card-title matTooltip="The total number of requests made to an API. Each time a client application makes a request to the API, the request count increases.">Request Count</mat-card-title>
         <mat-card-content>
           <div>
-            <canvas #apiMetricsChart1 width="400" height="100"></canvas>
+            <canvas #apiMetricsChart1 width="400" height="150"></canvas>
           </div>
         </mat-card-content>
       </mat-card>
@@ -16,7 +16,7 @@
       <mat-card class="usage-card">
         <mat-card-title matTooltip="The amount of data transferred between the client and the server during API calls. This is often measured in terms of bandwidth or data size.">Traffic Volume</mat-card-title>
         <mat-card-content>
-          <canvas #apiMetricsChart2 width="400" height="100"></canvas>
+          <canvas #apiMetricsChart2 width="400" height="150"></canvas>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
@@ -25,7 +25,7 @@
       <mat-card class="list-card">
         <mat-card-title matTooltip="The time it takes for the API to respond to a request. Lower response times are generally preferred to provide a better user experience.">Response Time</mat-card-title>
         <mat-card-content>
-          <canvas #apiMetricsChart3 width="400" height="100"></canvas>
+          <canvas #apiMetricsChart3 width="400" height="150"></canvas>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
@@ -33,57 +33,9 @@
       <mat-card class="list-card">
         <mat-card-title matTooltip="The percentage of API requests that result in errors. Monitoring error rates is crucial for identifying issues and ensuring the reliability of the API.">Error Rates</mat-card-title>
         <mat-card-content>
-          <canvas #apiMetricsChart4 width="400" height="100"></canvas>
+          <canvas #apiMetricsChart4 width="400" height="150"></canvas>
         </mat-card-content>
       </mat-card>
-    </mat-grid-tile>
-
-
-    <mat-grid-tile>
-      <mat-card class="table-card">
-        <mat-card-title>Subscribed APIs Overview</mat-card-title>
-        <mat-card-content>
-          <mat-table [dataSource]="subscribedAPIsDataSource" matSort>
-
-            <ng-container matColumnDef="name">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> API Name </mat-header-cell>
-              <mat-cell *matCellDef="let row"> {{ row.name }} </mat-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="category">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Category </mat-header-cell>
-              <mat-cell *matCellDef="let row"> {{ row.category }} </mat-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="description">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Description </mat-header-cell>
-              <mat-cell *matCellDef="let row"> {{ row.description }} </mat-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="usageGuide">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Usage Guide </mat-header-cell>
-              <mat-cell *matCellDef="let row"> {{ row.usageGuide }} </mat-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="features">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Features </mat-header-cell>
-              <mat-cell *matCellDef="let row"> {{ row.features.join(', ') }} </mat-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="pricingPlan">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Pricing Plan </mat-header-cell>
-              <mat-cell *matCellDef="let row"> {{ row.pricingPlan }} </mat-cell>
-            </ng-container>
-
-            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-
-          </mat-table>
-
-          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-        </mat-card-content>
-      </mat-card>
-
     </mat-grid-tile>
   </mat-grid-list>
 </div>
