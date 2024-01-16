@@ -1,6 +1,7 @@
-import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SidebarService } from '../sidebar/sidebar.service';
+import { AccountService } from 'src/app/services';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,9 @@ import { SidebarService } from '../sidebar/sidebar.service';
 })
 export class NavbarComponent implements OnInit {
   hideMenuButtonRoutes = ['/', '/login', '/register'];
-  constructor(private sidebarService: SidebarService, private router: Router) {}
+  constructor(private sidebarService: SidebarService,
+              private router: Router,
+              private accountService: AccountService) {}
 
   ngOnInit() {
   }
@@ -21,6 +24,12 @@ export class NavbarComponent implements OnInit {
   
   toggleSidebar() {
     this.sidebarService.toggleSidebar();
+  }
+
+
+  isLoggedin() {
+    return this.accountService.isLoggedIn();
+    
   }
 
 
