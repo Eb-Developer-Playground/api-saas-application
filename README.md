@@ -1,5 +1,7 @@
 # ApiMonetization
 
+[![Build and Deploy](https://github.com/Eb-Developer-Playground/api-saas-application/actions/workflows/deploy-gh-pages.yml/badge.svg)](https://github.com/Eb-Developer-Playground/api-saas-application/actions/workflows/deploy-gh-pages.yml)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.11.
 
 ## Development server
