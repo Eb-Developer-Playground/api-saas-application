@@ -1,22 +1,39 @@
 <mat-toolbar color="primary">
-  <span>User Profile</span>
+  <span class="toolbar-title">Account</span>
 </mat-toolbar>
 
-<mat-card>
+<mat-card class="user-profile-card">
+
   <mat-card-header>
-    <mat-card-title>User Profile</mat-card-title>
+    <mat-card-title class="card-title">User Profile</mat-card-title>
   </mat-card-header>
 
+  <mat-divider></mat-divider>
+
   <mat-card-content>
+
     <div class="user-details">
-      <div><strong>User ID:</strong> {{ currentUser?.id }}</div>
-      <div><strong>Username:</strong> {{ currentUser?.username }}</div>
-      <div><strong>Name:</strong> {{ currentUser?.firstName }} {{ currentUser?.lastName }}</div>
-      <div><strong>Email:</strong> {{ currentUser?.email }}</div>
+      <div class="detail"><strong>Username:</strong> {{ currentUser?.username }}</div>
+      <div class="detail"><strong>Name:</strong> {{ currentUser?.firstName }} {{ currentUser?.lastName }}</div>
+      <div class="detail"><strong>Email:</strong> {{ currentUser?.email }}</div>
     </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="action-buttons">
+      <button mat-raised-button (click)="openEditDialog()">Edit Profile</button>
+    </div>
+
   </mat-card-content>
 
-  <mat-card-actions>
-    <!-- <button mat-raised-button color="accent" (click)="openEditDialog()">Edit</button> -->
-  </mat-card-actions>
+</mat-card>
+
+<mat-card class="danger-zone-card">
+
+  <mat-card-content class="danger-zone">
+    <div class="danger-title">Danger Zone</div>
+    <div class="danger-description">Performing actions in this section may have irreversible consequences.</div>
+    <button mat-raised-button color="warn" (click)="deleteAccount()">Delete</button>
+  </mat-card-content>
+
 </mat-card>
