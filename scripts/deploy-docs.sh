@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Step 1: Copy documentation to gh-pages folder
-cp -r documentation/* gh-pages
+# cp -r documentation/* gh-pages
 
 # # Step 2: Create or switch to gh-pages branch
 # git checkout --orphan gh-pages
