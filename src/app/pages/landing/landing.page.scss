@@ -1,0 +1,36 @@
+.container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-button {
+  /* Your button styles */
+}
+
+.title {
+  /* Your title styles */
+}
+
+.menu-items {
+  display: flex;
+}
+
+.sidenav-container {
+  display: flex;
+  flex: 1;
+}
+
+.sidenav {
+  /* Your sidenav styles */
+}
+
+.sidenav-content {
+  /* Your sidenav content styles */
+}

@@ -1,0 +1,42 @@
+<mat-card class="table-card">
+  <mat-card-title>Subscribed APIs Bills Overview</mat-card-title>
+  <mat-card-content>
+    <mat-table [dataSource]="subscribedAPIsDataSource" matSort>
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> API Name </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row.name }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Description </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row.description }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="pricingPlan">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Pricing Plan </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row.pricingPlan }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="subscriptionCost">
+        <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+        <mat-cell *matCellDef="let row"> Ksh {{row.cost.toLocaleString()}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="payment">
+        <mat-header-cell *matHeaderCellDef> Make Payment </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button mat-raised-button (click)="makePayment(row)">
+            <mat-icon>payment</mat-icon>
+            Pay
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+    </mat-table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </mat-card-content>
+</mat-card>

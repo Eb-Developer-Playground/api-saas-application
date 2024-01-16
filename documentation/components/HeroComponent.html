@@ -1,0 +1,683 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>api-monetization documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">api-monetization documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  HeroComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/components/containers/hero/hero.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-hero</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./hero.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./hero.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/shared/components/containers/hero/hero.component.ts:8</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="12"
+                                    class="link-to-prism">src/app/shared/components/containers/hero/hero.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-hero&#x27;,
+  templateUrl: &#x27;./hero.component.html&#x27;,
+  styleUrls: [&#x27;./hero.component.scss&#x27;]
+})
+export class HeroComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&#x27;hero&#x27;&gt;
+  &lt;div class&#x3D;&#x27;background-left&#x27;&gt;&lt;/div&gt;
+  &lt;div class&#x3D;&#x27;background-right&#x27;&gt;&lt;/div&gt;
+  
+  &lt;div class&#x3D;&#x27;hero-content&#x27;&gt; 
+    &lt;div class&#x3D;&#x27;hero-left&#x27;&gt;
+      &lt;h1&gt;
+        Discover a variety of APIs in our
+        &lt;b&gt;Developer Portal&lt;/b&gt;
+      &lt;/h1&gt;
+      &lt;p&gt;
+        Our API Hub provides developers with seamless access to a variety of banking and financial services, empowering you to create innovative solutions that redefine the future of finance.
+      &lt;/p&gt;
+      &lt;button mat-fab extended aria-label&#x3D;&quot;Discover Equity APIs&quot; [routerLink]&#x3D;&quot;[&#x27;/auth/register&#x27;]&quot;&gt;Discover Equity APIs&lt;/button&gt;
+      
+    &lt;/div&gt;  
+    &lt;div class&#x3D;&#x27;hero-right&#x27;&gt;
+      &lt;img class&#x3D;&#x27;hero-image&#x27; src&#x3D;&#x27;assets/images/illustrations/undraw_mobile_pay_re_sjb8_black.svg&#x27; /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./hero.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import url(&#x27;https://fonts.googleapis.com/css?family&#x3D;Nunito:400,200&#x27;);
+@import &#x27;src/theme&#x27;;
+
+$primary-color:  map-get($theme-primary, 500);
+$secondary-color: map-get($theme-accent, A400);
+$tertiary-color: map-get($theme-accent, A100);
+$text-color: white;
+$shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+h1 {
+  font-family: &#x27;Nunito&#x27;, sans-serif;
+  margin: 0;
+  font-weight: lighter;
+  color: $text-color;
+  font-size: 3rem;
+}
+
+p {
+  font-weight: lighter;
+}
+
+button {
+  border-radius: 25px;
+  color: $text-color;
+  letter-spacing: 1px;
+  font-weight:bold;
+  box-shadow: $shadow;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  &amp;:hover {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+}
+
+.hero {
+  position: relative;
+  height: 100%;
+  min-height: 100vh;
+  color: $text-color;
+  box-sizing: border-box;
+}
+
+.background {
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.background-left {
+  @extend .background;
+  z-index: -1;
+  background: red;
+  background: $primary-color;
+}
+
+.background-right {   
+  z-index: -1;
+  @extend .background;
+  background: $secondary-color;
+  clip-path: polygon(0 0, 0% 100%, 90% 100%);
+}
+
+.hero-content {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  position: relative;
+  p {
+    margin: 3rem 0;
+    max-width: auto;
+  }
+}
+
+.hero-left {
+  animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  min-width: 35%;
+  max-width: 400px;
+}
+
+.hero-right {
+  animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image {
+  position: relative;
+  z-index: 88;
+  width: auto;
+  height: 100%;
+  max-height: 480px;
+}
+
+
+// Animations
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Media query for smaller screens upto 500px width max*/
+@media (max-width: 500px)  {
+  .hero-image {
+    display: none,
+    
+  }
+
+  .hero-right {
+    display: none;
+  }
+}
+
+@media (width: 768px) and (height: 1024px)  {
+  .hero-right {
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .hero-image {
+    position: relative;
+    z-index: 88;
+    width: 95%;
+    height: 95%;
+    max-height: none;
+  }
+  
+}
+
+
+/* Media query for smaller screens upto 500px width max*/
+@media (max-width: 1024px)  {
+  .hero-right {
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .hero-image {
+    position: relative;
+    z-index: 88;
+    width: 95%;
+    height: 95%;
+    max-height: none;
+  }
+  
+}
+
+
+@media (width: 280px) and (height: 653px)  {
+  .hero-right {
+    display: none,
+  }
+  
+  .hero-image {
+    display: none;
+  }
+  
+}
+
+
+@media (width: 1024px) and (height: 600px)  {
+  .hero-right {
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .hero-image {
+    position: relative;
+    z-index: 88;
+    width: 95%;
+    height: 95%;
+    max-height: none;
+  }
+}
+
+
+@media (width: 1280px) and (height: 800px)  {
+  .hero-right {
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .hero-image {
+    position: relative;
+    z-index: 88;
+    width: 95%;
+    height: 95%;
+    max-height: none;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section class=\'hero\'>  <div class=\'background-left\'></div>  <div class=\'background-right\'></div>    <div class=\'hero-content\'>     <div class=\'hero-left\'>      <h1>        Discover a variety of APIs in our        <b>Developer Portal</b>      </h1>      <p>        Our API Hub provides developers with seamless access to a variety of banking and financial services, empowering you to create innovative solutions that redefine the future of finance.      </p>      <button mat-fab extended aria-label="Discover Equity APIs" [routerLink]="[\'/auth/register\']">Discover Equity APIs</button>          </div>      <div class=\'hero-right\'>      <img class=\'hero-image\' src=\'assets/images/illustrations/undraw_mobile_pay_re_sjb8_black.svg\' />    </div>  </div></section></div>'
+    var COMPONENTS = [{'name': 'AlertComponent', 'selector': 'app-alert'},{'name': 'ApiCatalogueListComponent', 'selector': 'app-api-catalogue-list'},{'name': 'ApiDetailComponent', 'selector': 'app-api-detail'},{'name': 'ApiKeyFormComponent', 'selector': 'app-api-key-form'},{'name': 'ApiKeyModalComponent', 'selector': 'app-api-key-modal'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BillingComponent', 'selector': 'app-billing'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DocumentationPage', 'selector': 'app-documentation'},{'name': 'FeaturesComponent', 'selector': 'app-features'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HelpCenterComponent', 'selector': 'app-help-center'},{'name': 'HeroComponent', 'selector': 'app-hero'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'LandingPage', 'selector': 'app-landing'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PricingPage', 'selector': 'app-pricing'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'SearchApiComponent', 'selector': 'app-search-api'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SubscribedApisComponent', 'selector': 'app-subscribed-apis'},{'name': 'TableSubscribedApiCostComponent', 'selector': 'app-table-subscribed-api-cost'},{'name': 'TableSubscribedApisComponent', 'selector': 'app-table-subscribed-user-apis'},{'name': 'UserApiKeysComponent', 'selector': 'app-user-api-keys'},{'name': 'UserApiUsageComponent', 'selector': 'app-charts-api-usage'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'HeroComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HeroComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
