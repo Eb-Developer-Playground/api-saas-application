@@ -10,25 +10,25 @@ import { ApiKey } from '../models';
 })
 export class ApiKeyService {
 
-    apiKeyList: ApiKey[] = [];
+    apiKeys: ApiKey[] = apiKeyList;
     
     generateApiKey(): string {
         return Math.random().toString(36).substr(2, 10);
     }
 
     getAllApiKeys(): ApiKey[] {
-        return this.apiKeyList;
+        return this.apiKeys;
     }
 
     addApiKey(apiKey: ApiKey): void {
-        this.apiKeyList.push(apiKey);
+        this.apiKeys.push(apiKey);
     }
 
     deleteApiKey(apiKeyName: string): void {
-        const indexToDelete = this.apiKeyList.findIndex(apiKey => apiKey.name === apiKeyName);
+        const indexToDelete = this.apiKeys.findIndex(apiKey => apiKey.name === apiKeyName);
     
         if (indexToDelete !== -1) {
-            this.apiKeyList.splice(indexToDelete, 1);
+            this.apiKeys.splice(indexToDelete, 1);
             console.log(`API key '${apiKeyName}' deleted successfully.`);
         } else {
             console.log(`API key '${apiKeyName}' not found.`);
