@@ -30,8 +30,19 @@ export class UserApiKeysComponent implements OnInit {
   }
 
   deleteApiKey(apiKey: ApiKey): void {
-    // Implement your delete logic here
-    console.log('Delete clicked for:', apiKey);
+    const apiKeyName = apiKey.name;
+    const indexToDelete = apiKeyList.findIndex(apiKey => apiKey.name === apiKeyName);
+  
+    if (indexToDelete !== -1) {
+      // If the API key with the given name is found, remove it from the array
+      apiKeyList.splice(indexToDelete, 1);
+      // Update the dataSource with the modified apiKeyList
+      this.dataSource = new MatTableDataSource(apiKeyList);
+      this.dataSource.paginator = this.paginator;
+    } else {
+      console.log(`API key '${apiKeyName}' not found.`);
+    }
   }
+  
 
 }
