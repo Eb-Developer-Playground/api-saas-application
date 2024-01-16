@@ -1,5 +1,5 @@
 export * from './account.service';
-export * from './alert.service';
+export * from './ui/alert.service';
 export * from './api.service';
 export * from './ui/redoc.service';
 export * from './cache.service';
