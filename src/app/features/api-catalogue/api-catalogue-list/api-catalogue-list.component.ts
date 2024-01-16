@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-api-catalogue-list',
@@ -9,7 +10,7 @@ export class ApiCatalogueListComponent implements OnInit {
 
   filteredAPIs: any[] = [];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
 
@@ -23,8 +24,8 @@ export class ApiCatalogueListComponent implements OnInit {
 
 
   viewDetails(apiID: number){
-  //TODO: Logic to navigate or display detailed information for the selected API
-  // We use the apiId to fetch specific API details
+    // Navigate to the detailed view using the API ID
+    this.router.navigate(['/apis/detail', apiID]);
   }
 
   tryApi(apiID: number){

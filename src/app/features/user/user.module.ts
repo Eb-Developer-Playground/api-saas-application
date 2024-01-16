@@ -6,6 +6,7 @@ import { UserAccountManagementRoutingModule } from './user-routing';
 import { ProfileComponent } from './profile/profile.component';
 import { UserApiKeysComponent } from './user-apikeys/user-api-keys.component';
 import { BillingComponent } from './billing/billing.component';
+import { SubscribedApisComponent } from './subscribed-apis/subscribed-apis.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { BillingComponent } from './billing/billing.component';
   declarations: [
     ProfileComponent,
     UserApiKeysComponent,
-    BillingComponent
-  ]
+    BillingComponent,
+    SubscribedApisComponent
+  ],
 })
 export class UserModule { }

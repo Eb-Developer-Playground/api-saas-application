@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
@@ -44,7 +44,7 @@ export class AccountService {
 
         // Assuming userSubject emits User objects and doesn't allow null
         // Set a default user object representing an unauthenticated state or an empty user
-        const emptyUser: User = { id: '', username: '', password: '', firstName: '', lastName: '', token: ''/* other fields */ };
+        const emptyUser: User = { id: '', username: '', password: '', firstName: '', lastName: '', token: '', email: ''};
         this.userSubject.next(emptyUser);
 
         // Navigate to the login page
@@ -60,7 +60,7 @@ export class AccountService {
     }
 
     getById(id: string) {
-        return this.http.get<User>(`${environment.apiUrl}/users/${id}`);
+        return of(this.http.get<User>(`${environment.apiUrl}/users/${id}`));
     }
 
     update(id: string, params: any ) {

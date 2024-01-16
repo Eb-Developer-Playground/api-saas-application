@@ -1,0 +1,22 @@
+/* api-key-form.component.scss */
+
+.api-key-modal-container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.api-key-input-container {
+    display: flex;
+    align-items: center;
+}
+
+.api-key-input {
+    flex-grow: 1;
+    margin-right: 8px;
+    /* Add some spacing between input and copy button */
+}
+
+.api-key-label {
+    margin-bottom: 9px;
+}

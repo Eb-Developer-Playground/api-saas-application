@@ -1,0 +1,41 @@
+<div class="mat-grid-list-container" *ngIf="isAuthenticated">
+  <mat-grid-list cols="1" rowHeight="2:1" gutterSize="20px">
+
+    <mat-grid-tile>
+      <mat-card class="usage-card">
+        <mat-card-title matTooltip="The total number of requests made to an API. Each time a client application makes a request to the API, the request count increases.">Request Count</mat-card-title>
+        <mat-card-content>
+          <div>
+            <canvas #apiMetricsChart1 width="400" height="150"></canvas>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card class="usage-card">
+        <mat-card-title matTooltip="The amount of data transferred between the client and the server during API calls. This is often measured in terms of bandwidth or data size.">Traffic Volume</mat-card-title>
+        <mat-card-content>
+          <canvas #apiMetricsChart2 width="400" height="150"></canvas>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <mat-card class="list-card">
+        <mat-card-title matTooltip="The time it takes for the API to respond to a request. Lower response times are generally preferred to provide a better user experience.">Response Time</mat-card-title>
+        <mat-card-content>
+          <canvas #apiMetricsChart3 width="400" height="150"></canvas>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="list-card">
+        <mat-card-title matTooltip="The percentage of API requests that result in errors. Monitoring error rates is crucial for identifying issues and ensuring the reliability of the API.">Error Rates</mat-card-title>
+        <mat-card-content>
+          <canvas #apiMetricsChart4 width="400" height="150"></canvas>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
