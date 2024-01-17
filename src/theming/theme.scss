@@ -1,6 +1,6 @@
 /*Custom theme for the application*/
 @use '@angular/material' as mat;
-@import './_palette.scss';
+@import './palette';
 
 
 @include mat.core();
