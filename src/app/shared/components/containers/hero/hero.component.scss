@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,200');
-@import 'src/theme';
+@import 'src/theming/theme';
 
 $primary-color:  map-get($theme-primary, 500);
 $secondary-color: map-get($theme-accent, A400);
