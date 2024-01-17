@@ -40,8 +40,11 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/theme.scss",
-              "src/_palette.scss"
+              "src/theming/theme.scss",
+              "src/theming/_variables.scss",
+              "src/theming/_palette.scss",
+              "src/theming/_mixins.scss",
+              "src/theming/index.scss"
             ],
             "scripts": [
               "node_modules/redoc/bundles/redoc.standalone.js"
