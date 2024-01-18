@@ -235,7 +235,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(titleService: Title, router: Router, accountService: <a href="../injectables/AccountService.html" target="_self">AccountService</a>)</code>
+<code>constructor(router: Router, accountService: <a href="../injectables/AccountService.html" target="_self">AccountService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -257,18 +257,6 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                                <tr>
-                                                        <td>titleService</td>
-                                                  
-                                                        <td>
-                                                                    <code>Title</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
                                                 <tr>
                                                         <td>router</td>
                                                   
@@ -331,8 +319,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="25"
-                                    class="link-to-prism">src/app/pages/landing/landing.page.ts:25</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="26"
+                                    class="link-to-prism">src/app/pages/landing/landing.page.ts:26</a></div>
                         </td>
                     </tr>
 
@@ -403,10 +391,11 @@ import { AccountService } from &#x27;src/app/services/account.service&#x27;;
 })
 export class LandingPage implements OnInit {
   title &#x3D; &#x27;Home&#x27;;
-  constructor(private titleService: Title,
+  constructor(
+              // private titleService: Title,
               private router: Router,
               private accountService: AccountService) { 
-    this.titleService.setTitle($localize &#x60;${this.title}&#x60;)
+    // this.titleService.setTitle($localize &#x60;${this.title}&#x60;)
 
 
     // redirect to home if already logged in
