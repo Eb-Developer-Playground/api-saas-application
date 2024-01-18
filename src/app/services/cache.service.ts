@@ -24,7 +24,7 @@ export class CacheService {
     }
 
     // Clear all data from local storage
-    clearAll(): void {
+    clearAll(): void { 
         localStorage.clear();
     }
 }
