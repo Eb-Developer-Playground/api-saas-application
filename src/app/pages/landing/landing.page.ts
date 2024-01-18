@@ -10,10 +10,11 @@ import { AccountService } from 'src/app/services/account.service';
 })
 export class LandingPage implements OnInit {
   title = 'Home';
-  constructor(private titleService: Title,
+  constructor(
+              // private titleService: Title,
               private router: Router,
               private accountService: AccountService) { 
-    this.titleService.setTitle($localize `${this.title}`)
+    // this.titleService.setTitle($localize `${this.title}`)
 
 
     // redirect to home if already logged in
