@@ -72,8 +72,17 @@ $primary-color: map-get($theme-primary, 500);
     width: 15%;
     /* Set a different width for the sidenav in mobile mode */
   }
+
+  .flex-container {
+    display: none;
+  }
 }
 
+@media (max-width: 900px) {
+  #additional-details {
+    display: none;
+  }
+}
 
 .flex-container {
   flex: 1;
