@@ -3,7 +3,7 @@
 
 ## Overview
 
-This project represents an API SaaS (Software as a Service) application, providing a robust and scalable solution for [insert brief description of your app here]. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.11.
+This project represents an API SaaS (Software as a Service) application.
 
 ## Technology Stack
 
