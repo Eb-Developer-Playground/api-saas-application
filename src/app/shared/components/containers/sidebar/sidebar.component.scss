@@ -1,4 +1,5 @@
 @import '../../../../../theming/theme.scss';
+@import '../../../../../theming//mixins.scss';
 
 $primary-color: map-get($theme-primary, 500);
 
@@ -37,9 +38,8 @@ $primary-color: map-get($theme-primary, 500);
 .app-sidenav-content {
   flex: 1;
   padding: 20px;
-  /* Adjust padding to create space between content and sidebar */
   // overflow-y: auto;
-  overflow: auto;
+  // overflow: auto;
 }
 
 .logout-item {
@@ -58,97 +58,6 @@ $primary-color: map-get($theme-primary, 500);
 }
 
 
-/* Media query for responsiveness */
-@media (max-width: 412px) {
-  .app-sidenav {
-    width: 15%;
-    /* Set a different width for the sidenav in mobile mode */
-  }
-}
-
-/* Media query for responsiveness */
-@media (min-width: 500px) {
-  .app-sidenav {
-    width: 15%;
-    /* Set a different width for the sidenav in mobile mode */
-  }
-
-  .flex-container {
-    display: none;
-  }
-}
-
-@media (max-width: 900px) {
-  #additional-details {
-    display: none;
-  }
-}
-
-.flex-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.additional-details-card {
-  flex: 1;
-  margin-left: 1px;
-  margin-right: 10px;
-  margin-top: 90px;
-  overflow-y: auto;
-
-}
-
-
-.quick-links ul {
-  list-style-type: none;
-  padding: 0;
-  font-size: 16px;
-}
-
-.quick-links a,
-.popular-tags a {
-  color: $primary-color;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.quick-links a:hover,
-.popular-tags a:hover {
-  color: #e74c3c;
-}
-
-.tag-cloud {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.tag {
-  margin-right: 10px;
-  margin-bottom: 10px;
-  font-size: 13px;
-}
-
-.tag-link {
-  color: map-get($theme-accent, A100);
-  text-decoration: none;
-  padding: 4px 8px;
-  border: 1px solid map-get($theme-accent, A100);
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.tag-link:hover {
-  background-color: map-get($theme-accent, A100);
-  color: #fff;
-}
-
-
-.tag-link.active {
-  background-color: map-get($theme-accent, A100);
-  color: #fff;
-}
-
 .sidebar-card-title {
   font-size: 16px;
   color: black;
@@ -156,4 +65,22 @@ $primary-color: map-get($theme-primary, 500);
 
 .sidebar-subtitle {
   font-size: 13px;
+}
+
+
+
+/**Media Queries */
+
+@include respond-to-mobile {
+  .app-sidenav {
+    width: 15%;
+  }
+}
+
+@include respond-to-tablet {
+  // width: 75%; /* Styles for screens between 768px and 991px width */
+}
+
+@include respond-to-desktop {
+  // width: 100%; /* Styles for screens 992px width and above */
 }

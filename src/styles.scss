@@ -1,6 +1,92 @@
 /* Fontawesome */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'); 
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 /*Material Font + Icons */
-@import url('assets/scss/material-font-icons.scss');
+// @import url('./assets/scss/material-font-icons.scss');
 /* Custom Theme */
 @import './theming/index';
+
+@import './theming/mixins';
+
+// YourComponent.component.scss
+
+// Import the global mixins file
+@import './theming/mixins';
+
+
+
+mat-card-title {
+    margin: 20px !important;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+}
+
+/**Global mixins **/
+
+
+/* Use the mixins in your component styles */
+mat-card {
+    padding: 5px;
+
+    @include respond-to-mobile {
+        font-size: 14px;
+    }
+
+    @include respond-to-desktop {
+        font-size: 18px;
+    }
+}
+
+table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+
+    @include respond-to-mobile {
+
+        td,
+        th {
+            font-size: 12px;
+        }
+    }
+
+    @include respond-to-desktop {
+
+        td,
+        th {
+            font-size: 16px;
+        }
+    }
+
+    /* Optional: scrollbar styles */
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: darkgray;
+        border-radius: 10px;
+        border: 2px solid white;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: lightgray;
+    }
+}
+
+mat-paginator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: auto;
+
+    @include respond-to-mobile {
+        font-size: 12px;
+    }
+
+    @include respond-to-desktop {
+        font-size: 16px;
+    }
+}
