@@ -40,12 +40,11 @@ mat-card {
 }
 
 table {
-    display: block;
     overflow-x: auto;
     white-space: nowrap;
 
     @include respond-to-mobile {
-
+        display:block; // makes table overflow work
         td,
         th {
             font-size: 12px;
