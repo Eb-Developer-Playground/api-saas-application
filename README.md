@@ -22,6 +22,10 @@ I utilize GitHub Actions for seamless CI/CD. The badges above represent the stat
 
 - **GitHub Pages:** [Link to GitHub Pages](https://eb-developer-playground.github.io/api-saas-application/)
 
+### Demo Link
+
+- **Web link:** [Demo Link](https://app-4pf.pages.dev/fr/)
+
 
 ## Development server
 
