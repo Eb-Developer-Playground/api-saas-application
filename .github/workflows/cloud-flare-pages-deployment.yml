@@ -33,6 +33,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: app
+          projectName: api-saas-app
           directory: dist/api-monetization/fr/
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
