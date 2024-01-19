@@ -1,3 +1,4 @@
+name: Build and Deploy to Cloudflare Hosting
 on:
   push:
     branches:
