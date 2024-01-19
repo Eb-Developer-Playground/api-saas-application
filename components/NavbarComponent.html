@@ -202,6 +202,12 @@
                             <li>
                                 <a href="#hideMenuButtonRoutes" >hideMenuButtonRoutes</a>
                             </li>
+                            <li>
+                                <a href="#isLoggedin" >isLoggedin</a>
+                            </li>
+                            <li>
+                                <a href="#user" >user</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -214,9 +220,6 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
-                            <li>
-                                <a href="#isLoggedin" >isLoggedin</a>
-                            </li>
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
@@ -244,12 +247,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(sidebarService: <a href="../injectables/SidebarService.html" target="_self">SidebarService</a>, router: Router, accountService: <a href="../injectables/AccountService.html" target="_self">AccountService</a>)</code>
+<code>constructor(sidebarService: <a href="../injectables/SidebarService.html" target="_self">SidebarService</a>, router: Router, cacheService: <a href="../injectables/CacheService.html" target="_self">CacheService</a>, accountService: <a href="../injectables/AccountService.html" target="_self">AccountService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/components/containers/navbar/navbar.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/components/containers/navbar/navbar.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -291,6 +294,18 @@
                                                     
                                                 </tr>
                                                 <tr>
+                                                        <td>cacheService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CacheService.html" target="_self" >CacheService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
                                                         <td>accountService</td>
                                                   
                                                         <td>
@@ -324,43 +339,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="isLoggedin"></a>
-                    <span class="name">
-                        <span ><b>isLoggedin</b></span>
-                        <a href="#isLoggedin"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>isLoggedin()</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="30"
-                                    class="link-to-prism">src/app/shared/components/containers/navbar/navbar.component.ts:30</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                        </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="ngOnInit"></a>
                     <span class="name">
                         <span ><b>ngOnInit</b></span>
@@ -377,8 +355,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="17"
-                                    class="link-to-prism">src/app/shared/components/containers/navbar/navbar.component.ts:17</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="23"
+                                    class="link-to-prism">src/app/shared/components/containers/navbar/navbar.component.ts:23</a></div>
                         </td>
                     </tr>
 
@@ -414,8 +392,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="20"
-                                    class="link-to-prism">src/app/shared/components/containers/navbar/navbar.component.ts:20</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="31"
+                                    class="link-to-prism">src/app/shared/components/containers/navbar/navbar.component.ts:31</a></div>
                         </td>
                     </tr>
 
@@ -451,8 +429,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="25"
-                                    class="link-to-prism">src/app/shared/components/containers/navbar/navbar.component.ts:25</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="36"
+                                    class="link-to-prism">src/app/shared/components/containers/navbar/navbar.component.ts:36</a></div>
                         </td>
                     </tr>
 
@@ -498,7 +476,64 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/components/containers/navbar/navbar.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/components/containers/navbar/navbar.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoggedin"></a>
+                    <span class="name">
+                        <span ><b>isLoggedin</b></span>
+                        <a href="#isLoggedin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/shared/components/containers/navbar/navbar.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user"></a>
+                    <span class="name">
+                        <span ><b>user</b></span>
+                        <a href="#user"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/components/containers/navbar/navbar.component.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -514,7 +549,8 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 import { SidebarService } from &#x27;../sidebar/sidebar.service&#x27;;
-import { AccountService } from &#x27;src/app/services&#x27;;
+import { AccountService, CacheService } from &#x27;src/app/services&#x27;;
+import { User } from &#x27;src/app/models&#x27;;
 
 @Component({
   selector: &#x27;app-navbar&#x27;,
@@ -523,11 +559,21 @@ import { AccountService } from &#x27;src/app/services&#x27;;
 })
 export class NavbarComponent implements OnInit {
   hideMenuButtonRoutes &#x3D; [&#x27;/&#x27;, &#x27;/login&#x27;, &#x27;/register&#x27;];
+  isLoggedin: boolean &#x3D; false;
+  user!: User;
   constructor(private sidebarService: SidebarService,
               private router: Router,
-              private accountService: AccountService) {}
+              private cacheService: CacheService,
+              private accountService: AccountService) {
+                this.user &#x3D; this.cacheService.get(&#x27;user&#x27;) as User;
+              }
 
   ngOnInit() {
+    if(this.user){
+      this.isLoggedin &#x3D; true;
+    } else {
+      this.isLoggedin &#x3D; false;
+    }
   }
 
   shouldShowMenuButton(): boolean {
@@ -537,12 +583,6 @@ export class NavbarComponent implements OnInit {
   
   toggleSidebar() {
     this.sidebarService.toggleSidebar();
-  }
-
-
-  isLoggedin() {
-    return this.accountService.isLoggedIn();
-    
   }
 
 
@@ -564,13 +604,13 @@ export class NavbarComponent implements OnInit {
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;spacer&quot;&gt;&lt;/div&gt;
-  &lt;div class&#x3D;&quot;nav-links&quot;&gt;
+  &lt;div class&#x3D;&quot;nav-links&quot; *ngIf&#x3D;&quot;!this.isLoggedin&quot;&gt;
     &lt;a mat-button href&#x3D;&quot;#&quot;&gt;Overview&lt;/a&gt;
     &lt;a mat-button href&#x3D;&quot;#&quot;&gt;Documentation&lt;/a&gt;
     &lt;a mat-button href&#x3D;&quot;#&quot;&gt;API Catalogue&lt;/a&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;spacer&quot;&gt;&lt;/div&gt;
-  &lt;div class&#x3D;&quot;auth-links&quot;&gt;
+  &lt;div class&#x3D;&quot;auth-links&quot; *ngIf&#x3D;&quot;!this.isLoggedin&quot;&gt;
     &lt;a mat-button [routerLink]&#x3D;&quot;[&#x27;/auth/login&#x27;]&quot;&gt;Login&lt;/a&gt;
     &lt;button mat-button [routerLink]&#x3D;&quot;[&#x27;/auth/register&#x27;]&quot; routerLinkActive&#x3D;&quot;router-link-active&quot;  color&#x3D;&quot;primary&quot;&gt;Register&lt;/button&gt;
   &lt;/div&gt;
@@ -690,7 +730,7 @@ export class NavbarComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-toolbar class="example-toolbar">  <button mat-icon-button *ngIf="shouldShowMenuButton()" (click)="toggleSidebar()">    <mat-icon>menu</mat-icon>  </button>  <div class="branding-container">    <div class="branding-logo">      <img src="assets/images/logos/Equity_Bank_Logo.png" alt="Logo" class="logo-img">    </div>    <div class="branding-title">      <h1 class="example-app-name">API Gateway</h1>    </div>  </div>  <div class="spacer"></div>  <div class="nav-links">    <a mat-button href="#">Overview</a>    <a mat-button href="#">Documentation</a>    <a mat-button href="#">API Catalogue</a>  </div>  <div class="spacer"></div>  <div class="auth-links">    <a mat-button [routerLink]="[\'/auth/login\']">Login</a>    <button mat-button [routerLink]="[\'/auth/register\']" routerLinkActive="router-link-active"  color="primary">Register</button>  </div></mat-toolbar><!-- TODO: NG Template --></div>'
+        var COMPONENT_TEMPLATE = '<div><mat-toolbar class="example-toolbar">  <button mat-icon-button *ngIf="shouldShowMenuButton()" (click)="toggleSidebar()">    <mat-icon>menu</mat-icon>  </button>  <div class="branding-container">    <div class="branding-logo">      <img src="assets/images/logos/Equity_Bank_Logo.png" alt="Logo" class="logo-img">    </div>    <div class="branding-title">      <h1 class="example-app-name">API Gateway</h1>    </div>  </div>  <div class="spacer"></div>  <div class="nav-links" *ngIf="!this.isLoggedin">    <a mat-button href="#">Overview</a>    <a mat-button href="#">Documentation</a>    <a mat-button href="#">API Catalogue</a>  </div>  <div class="spacer"></div>  <div class="auth-links" *ngIf="!this.isLoggedin">    <a mat-button [routerLink]="[\'/auth/login\']">Login</a>    <button mat-button [routerLink]="[\'/auth/register\']" routerLinkActive="router-link-active"  color="primary">Register</button>  </div></mat-toolbar><!-- TODO: NG Template --></div>'
     var COMPONENTS = [{'name': 'AlertComponent', 'selector': 'app-alert'},{'name': 'ApiCatalogueListComponent', 'selector': 'app-api-catalogue-list'},{'name': 'ApiDetailComponent', 'selector': 'app-api-detail'},{'name': 'ApiKeyFormComponent', 'selector': 'app-api-key-form'},{'name': 'ApiKeyModalComponent', 'selector': 'app-api-key-modal'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BillingComponent', 'selector': 'app-billing'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DocumentationPage', 'selector': 'app-documentation'},{'name': 'FeaturesComponent', 'selector': 'app-features'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HelpCenterComponent', 'selector': 'app-help-center'},{'name': 'HeroComponent', 'selector': 'app-hero'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'LandingPage', 'selector': 'app-landing'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PricingPage', 'selector': 'app-pricing'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'SearchApiComponent', 'selector': 'app-search-api'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SubscribedApisComponent', 'selector': 'app-subscribed-apis'},{'name': 'TableSubscribedApiCostComponent', 'selector': 'app-table-subscribed-api-cost'},{'name': 'TableSubscribedApisComponent', 'selector': 'app-table-subscribed-user-apis'},{'name': 'UserApiKeysComponent', 'selector': 'app-user-api-keys'},{'name': 'UserApiUsageComponent', 'selector': 'app-charts-api-usage'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NavbarComponent'};
