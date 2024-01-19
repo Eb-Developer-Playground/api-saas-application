@@ -1,8 +1,27 @@
-# ApiMonetization
+# API SaaS App Documentation
 
-[![Build and Deploy](https://github.com/Eb-Developer-Playground/api-saas-application/actions/workflows/deploy-gh-pages.yml/badge.svg)](https://github.com/Eb-Developer-Playground/api-saas-application/actions/workflows/deploy-gh-pages.yml)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.11.
+## Overview
+
+This project represents an API SaaS (Software as a Service) application, providing a robust and scalable solution for [insert brief description of your app here]. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.11.
+
+## Technology Stack
+
+- **Angular CLI**: This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 16.2.11.
+
+## Continuous Integration/Continuous Deployment (CI/CD)
+
+### GitHub Actions
+
+I utilize GitHub Actions for seamless CI/CD. The badges above represent the status of the main workflows:
+
+- **Build and Deploy:** [![Build and Deploy](https://github.com/Eb-Developer-Playground/api-saas-application/actions/workflows/deploy-gh-pages.yml/badge.svg)](https://github.com/Eb-Developer-Playground/api-saas-application/actions/workflows/deploy-gh-pages.yml)
+- **Cloudflare Pages Deployment:** [![Cloudflare Pages Deployment](https://github.com/Eb-Developer-Playground/api-saas-application/actions/workflows/cloud-flare-pages-deployment.yml/badge.svg)](https://github.com/Eb-Developer-Playground/api-saas-application/actions/workflows/cloud-flare-pages-deployment.yml)
+
+### Documentation Link
+
+- **GitHub Pages:** [Link to GitHub Pages](https://eb-developer-playground.github.io/api-saas-application/)
+
 
 ## Development server
 
