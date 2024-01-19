@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SidebarService } from '../sidebar/sidebar.service';
-import { AccountService } from 'src/app/services';
+import { AccountService, CacheService } from 'src/app/services';
+import { User } from 'src/app/models';
 
 @Component({
   selector: 'app-navbar',
@@ -10,11 +11,21 @@ import { AccountService } from 'src/app/services';
 })
 export class NavbarComponent implements OnInit {
   hideMenuButtonRoutes = ['/', '/login', '/register'];
+  isLoggedin: boolean = false;
+  user!: User;
   constructor(private sidebarService: SidebarService,
               private router: Router,
-              private accountService: AccountService) {}
+              private cacheService: CacheService,
+              private accountService: AccountService) {
+                this.user = this.cacheService.get('user') as User;
+              }
 
   ngOnInit() {
+    if(this.user){
+      this.isLoggedin = true;
+    } else {
+      this.isLoggedin = false;
+    }
   }
 
   shouldShowMenuButton(): boolean {
@@ -24,12 +35,6 @@ export class NavbarComponent implements OnInit {
   
   toggleSidebar() {
     this.sidebarService.toggleSidebar();
-  }
-
-
-  isLoggedin() {
-    return this.accountService.isLoggedIn();
-    
   }
 
 
