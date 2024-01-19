@@ -1,12 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing'; // Import RouterTestingModule
 import { InputComponent } from './input.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 describe('InputComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [InputComponent],
-      imports: [RouterTestingModule], // Include RouterTestingModule here
+      imports: [RouterTestingModule, HttpClientModule, MaterialModule],
     }).compileComponents();
   });
 

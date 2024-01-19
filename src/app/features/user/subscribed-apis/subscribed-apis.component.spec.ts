@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { SubscribedApisComponent } from './subscribed-apis.component';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 describe('SubscribedApisComponent', () => {
   let component: SubscribedApisComponent;
@@ -11,7 +12,8 @@ describe('SubscribedApisComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SubscribedApisComponent ]
+      declarations: [ SubscribedApisComponent ],
+      imports: [MaterialModule]
     })
     .compileComponents();
   }));

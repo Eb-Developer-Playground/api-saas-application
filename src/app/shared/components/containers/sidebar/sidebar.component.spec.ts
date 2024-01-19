@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { SidebarComponent } from './sidebar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 describe('SidebarComponent', () => {
   let component: SidebarComponent;
@@ -11,7 +13,8 @@ describe('SidebarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SidebarComponent ]
+      declarations: [ SidebarComponent ],
+      imports: [HttpClientModule, MaterialModule]
     })
     .compileComponents();
   }));

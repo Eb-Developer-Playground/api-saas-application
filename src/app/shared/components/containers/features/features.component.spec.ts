@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { FeaturesComponent } from './features.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 describe('FeaturesComponent', () => {
   let component: FeaturesComponent;
@@ -11,7 +13,8 @@ describe('FeaturesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FeaturesComponent ]
+      declarations: [ FeaturesComponent ],
+      imports: [HttpClientModule, MaterialModule]
     })
     .compileComponents();
   }));

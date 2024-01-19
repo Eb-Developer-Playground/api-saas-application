@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { AlertComponent } from './alert.component';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 describe('AlertComponent', () => {
   let component: AlertComponent;
@@ -11,7 +12,8 @@ describe('AlertComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AlertComponent ]
+      declarations: [ AlertComponent ],
+      imports: [MaterialModule]
     })
     .compileComponents();
   }));

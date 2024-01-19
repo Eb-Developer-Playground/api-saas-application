@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ProfileComponent } from './profile.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 describe('ProfileComponent', () => {
   let component: ProfileComponent;
@@ -11,7 +13,8 @@ describe('ProfileComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileComponent ]
+      declarations: [ ProfileComponent ],
+      imports: [HttpClientModule, MaterialModule]
     })
     .compileComponents();
   }));

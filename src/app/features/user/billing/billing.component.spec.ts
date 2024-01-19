@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { BillingComponent } from './billing.component';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 describe('UserBillingComponent', () => {
   let component: BillingComponent;
@@ -11,7 +12,8 @@ describe('UserBillingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BillingComponent ]
+      declarations: [ BillingComponent ],
+      imports: [MaterialModule]
     })
     .compileComponents();
   }));
