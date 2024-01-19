@@ -822,26 +822,27 @@ export class SidebarComponent implements OnInit {
 				APIs
 			&lt;/a&gt;
 
-			&lt;mat-list-item (click)&#x3D;&quot;showSubmenu &#x3D; !showSubmenu&quot; class&#x3D;&quot;parent&quot;&gt;
+			&lt;!-- &lt;mat-list-item (click)&#x3D;&quot;showSubmenu &#x3D; !showSubmenu&quot; class&#x3D;&quot;parent&quot;&gt;
 				&lt;i class&#x3D;&quot;fas fa-cogs&quot;&gt;&lt;/i&gt;&amp;nbsp;
 				&lt;span class&#x3D;&quot;full-width&quot;&gt;Settings&lt;/span&gt;
 				&lt;i class&#x3D;&quot;menu-button fas fa-chevron-down&quot; *ngIf&#x3D;&quot;isExpanded || isShowing&quot;&gt;&lt;/i&gt;
-			&lt;/mat-list-item&gt;
+			&lt;/mat-list-item&gt; --&gt;
 
-			&lt;div class&#x3D;&quot;submenu&quot; [ngClass]&#x3D;&quot;{&#x27;expanded&#x27;: showSubmenu}&quot;&gt;
-				&lt;a mat-list-item [routerLink]&#x3D;&quot;[&#x27;/user/account&#x27;]&quot;&gt;
-					&lt;i class&#x3D;&quot;fas fa-user&quot;&gt;&lt;/i&gt;
-					Account
-				&lt;/a&gt;
-				&lt;a mat-list-item [routerLink]&#x3D;&quot;[&#x27;/user/billing&#x27;]&quot;&gt;
-					&lt;i class&#x3D;&quot;fas fa-credit-card&quot;&gt;&lt;/i&gt;
-					Billing
-				&lt;/a&gt;
-				&lt;a mat-list-item [routerLink]&#x3D;&quot;[&#x27;/user/subscribed-apis&#x27;]&quot;&gt;
-					&lt;i class&#x3D;&quot;fas fa-key&quot;&gt;&lt;/i&gt;
-				My APIs
-				&lt;/a&gt;
-			&lt;/div&gt;
+			&lt;a mat-list-item [routerLink]&#x3D;&quot;[&#x27;/user/account&#x27;]&quot;&gt;
+				&lt;i class&#x3D;&quot;fas fa-user&quot;&gt;&lt;/i&gt;
+				Account
+			&lt;/a&gt;
+
+			&lt;a mat-list-item [routerLink]&#x3D;&quot;[&#x27;/user/billing&#x27;]&quot;&gt;
+				&lt;i class&#x3D;&quot;fas fa-credit-card&quot;&gt;&lt;/i&gt;
+				Billing
+			&lt;/a&gt;
+
+			&lt;a mat-list-item [routerLink]&#x3D;&quot;[&#x27;/user/subscribed-apis&#x27;]&quot;&gt;
+				&lt;i class&#x3D;&quot;fas fa-key&quot;&gt;&lt;/i&gt;
+			My APIs
+			&lt;/a&gt;
+
 		&lt;/mat-nav-list&gt;
 
 		&lt;!-- Logout item moved outside of mat-nav-list --&gt;
@@ -849,38 +850,6 @@ export class SidebarComponent implements OnInit {
 			&lt;i class&#x3D;&quot;fas fa-sign-out-alt&quot;&gt;&lt;/i&gt;
 			Logout
 		&lt;/mat-list-item&gt;
-
-		&lt;!-- Flex container to cover remaining space --&gt;
-		&lt;div class&#x3D;&quot;flex-container&quot; id&#x3D;&quot;additional-details&quot;&gt;
-			&lt;!-- Small card with additional details --&gt;
-			&lt;mat-card class&#x3D;&quot;additional-details-card&quot;&gt;
-				&lt;mat-card-header&gt;
-					&lt;mat-card-title class&#x3D;&quot;sidebar-card-title&quot;&gt;Explore More&lt;/mat-card-title&gt;
-					&lt;mat-card-subtitle class&#x3D;&quot;sidebar-subtitle&quot;&gt;Find useful links and resources&lt;/mat-card-subtitle&gt;
-				&lt;/mat-card-header&gt;
-				&lt;mat-card-content&gt;
-					&lt;div class&#x3D;&quot;quick-links&quot;&gt;
-						&lt;p&gt;Quick Links:&lt;/p&gt;
-						&lt;ul class&#x3D;&quot;sidebar-quick-links&quot;&gt;
-							&lt;li&gt;&lt;a href&#x3D;&quot;/documentation&quot;&gt;Documentations&lt;/a&gt;&lt;/li&gt;
-							&lt;li&gt;&lt;a href&#x3D;&quot;/tutorials&quot;&gt;Tutorials &amp; Guides&lt;/a&gt;&lt;/li&gt;
-							&lt;li&gt;&lt;a href&#x3D;&quot;/support&quot;&gt;Support Center&lt;/a&gt;&lt;/li&gt;
-						&lt;/ul&gt;
-					&lt;/div&gt;
-					&lt;div class&#x3D;&quot;popular-tags&quot;&gt;
-						&lt;p&gt;Popular Tags:&lt;/p&gt;
-						&lt;div class&#x3D;&quot;tag-cloud&quot;&gt;
-							&lt;!-- Display popular tags as styled links --&gt;
-							&lt;span class&#x3D;&quot;tag&quot; *ngFor&#x3D;&quot;let tag of popularTags&quot;&gt;
-								&lt;a href&#x3D;&quot;#&quot; (click)&#x3D;&quot;filterByTag(tag)&quot; class&#x3D;&quot;tag-link&quot;
-									[class.active]&#x3D;&quot;tag &#x3D;&#x3D;&#x3D; selectedTag&quot;&gt;{{ tag }}&lt;/a&gt;
-							&lt;/span&gt;
-						&lt;/div&gt;
-					&lt;/div&gt;
-				&lt;/mat-card-content&gt;
-			&lt;/mat-card&gt;
-
-		&lt;/div&gt;
 	&lt;/mat-sidenav&gt;
 
 	&lt;div class&#x3D;&quot;app-sidenav-content&quot;&gt;
@@ -894,6 +863,7 @@ export class SidebarComponent implements OnInit {
                     <code>./sidebar.component.scss</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">@import &#x27;../../../../../theming/theme.scss&#x27;;
+@import &#x27;../../../../../theming//mixins.scss&#x27;;
 
 $primary-color: map-get($theme-primary, 500);
 
@@ -932,9 +902,8 @@ $primary-color: map-get($theme-primary, 500);
 .app-sidenav-content {
   flex: 1;
   padding: 20px;
-  /* Adjust padding to create space between content and sidebar */
   // overflow-y: auto;
-  overflow: auto;
+  // overflow: auto;
 }
 
 .logout-item {
@@ -953,97 +922,6 @@ $primary-color: map-get($theme-primary, 500);
 }
 
 
-/* Media query for responsiveness */
-@media (max-width: 412px) {
-  .app-sidenav {
-    width: 15%;
-    /* Set a different width for the sidenav in mobile mode */
-  }
-}
-
-/* Media query for responsiveness */
-@media (min-width: 500px) {
-  .app-sidenav {
-    width: 15%;
-    /* Set a different width for the sidenav in mobile mode */
-  }
-
-  .flex-container {
-    display: none;
-  }
-}
-
-@media (max-width: 900px) {
-  #additional-details {
-    display: none;
-  }
-}
-
-.flex-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.additional-details-card {
-  flex: 1;
-  margin-left: 1px;
-  margin-right: 10px;
-  margin-top: 90px;
-  overflow-y: auto;
-
-}
-
-
-.quick-links ul {
-  list-style-type: none;
-  padding: 0;
-  font-size: 16px;
-}
-
-.quick-links a,
-.popular-tags a {
-  color: $primary-color;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.quick-links a:hover,
-.popular-tags a:hover {
-  color: #e74c3c;
-}
-
-.tag-cloud {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.tag {
-  margin-right: 10px;
-  margin-bottom: 10px;
-  font-size: 13px;
-}
-
-.tag-link {
-  color: map-get($theme-accent, A100);
-  text-decoration: none;
-  padding: 4px 8px;
-  border: 1px solid map-get($theme-accent, A100);
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.tag-link:hover {
-  background-color: map-get($theme-accent, A100);
-  color: #fff;
-}
-
-
-.tag-link.active {
-  background-color: map-get($theme-accent, A100);
-  color: #fff;
-}
-
 .sidebar-card-title {
   font-size: 16px;
   color: black;
@@ -1051,6 +929,24 @@ $primary-color: map-get($theme-primary, 500);
 
 .sidebar-subtitle {
   font-size: 13px;
+}
+
+
+
+/**Media Queries */
+
+@include respond-to-mobile {
+  .app-sidenav {
+    width: 15%;
+  }
+}
+
+@include respond-to-tablet {
+  // width: 75%; /* Styles for screens between 768px and 991px width */
+}
+
+@include respond-to-desktop {
+  // width: 100%; /* Styles for screens 992px width and above */
 }</code></pre>
     </div>
 
@@ -1079,7 +975,7 @@ $primary-color: map-get($theme-primary, 500);
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-sidenav-container class="app-container" autosize>	<mat-sidenav #sidenav class="app-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()"		(mouseleave)="mouseleave()">		<mat-nav-list>			<a mat-list-item [routerLink]="[\'/dashboard\']">				<i class="fas fa-tachometer-alt"></i>				Dashboard			</a>			<a mat-list-item [routerLink]="[\'/user/apikeys\']">				<i class="fas fa-key"></i>				API keys			</a>			<a mat-list-item [routerLink]="[\'/apis/catalogue\']">				<i class="fas fa-book"></i>				APIs			</a>			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">				<i class="fas fa-cogs"></i>&nbsp;				<span class="full-width">Settings</span>				<i class="menu-button fas fa-chevron-down" *ngIf="isExpanded || isShowing"></i>			</mat-list-item>			<div class="submenu" [ngClass]="{\'expanded\': showSubmenu}">				<a mat-list-item [routerLink]="[\'/user/account\']">					<i class="fas fa-user"></i>					Account				</a>				<a mat-list-item [routerLink]="[\'/user/billing\']">					<i class="fas fa-credit-card"></i>					Billing				</a>				<a mat-list-item [routerLink]="[\'/user/subscribed-apis\']">					<i class="fas fa-key"></i>				My APIs				</a>			</div>		</mat-nav-list>		<!-- Logout item moved outside of mat-nav-list -->		<mat-list-item (click)="logout()" matTooltip="Logout" class="logout-item">			<i class="fas fa-sign-out-alt"></i>			Logout		</mat-list-item>		<!-- Flex container to cover remaining space -->		<div class="flex-container" id="additional-details">			<!-- Small card with additional details -->			<mat-card class="additional-details-card">				<mat-card-header>					<mat-card-title class="sidebar-card-title">Explore More</mat-card-title>					<mat-card-subtitle class="sidebar-subtitle">Find useful links and resources</mat-card-subtitle>				</mat-card-header>				<mat-card-content>					<div class="quick-links">						<p>Quick Links:</p>						<ul class="sidebar-quick-links">							<li><a href="/documentation">Documentations</a></li>							<li><a href="/tutorials">Tutorials & Guides</a></li>							<li><a href="/support">Support Center</a></li>						</ul>					</div>					<div class="popular-tags">						<p>Popular Tags:</p>						<div class="tag-cloud">							<!-- Display popular tags as styled links -->							<span class="tag" *ngFor="let tag of popularTags">								<a href="#" (click)="filterByTag(tag)" class="tag-link"									[class.active]="tag === selectedTag">{{ tag }}</a>							</span>						</div>					</div>				</mat-card-content>			</mat-card>		</div>	</mat-sidenav>	<div class="app-sidenav-content">		<router-outlet></router-outlet>	</div></mat-sidenav-container></div>'
+        var COMPONENT_TEMPLATE = '<div><mat-sidenav-container class="app-container" autosize>	<mat-sidenav #sidenav class="app-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()"		(mouseleave)="mouseleave()">		<mat-nav-list>			<a mat-list-item [routerLink]="[\'/dashboard\']">				<i class="fas fa-tachometer-alt"></i>				Dashboard			</a>			<a mat-list-item [routerLink]="[\'/user/apikeys\']">				<i class="fas fa-key"></i>				API keys			</a>			<a mat-list-item [routerLink]="[\'/apis/catalogue\']">				<i class="fas fa-book"></i>				APIs			</a>			<!-- <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">				<i class="fas fa-cogs"></i>&nbsp;				<span class="full-width">Settings</span>				<i class="menu-button fas fa-chevron-down" *ngIf="isExpanded || isShowing"></i>			</mat-list-item> -->			<a mat-list-item [routerLink]="[\'/user/account\']">				<i class="fas fa-user"></i>				Account			</a>			<a mat-list-item [routerLink]="[\'/user/billing\']">				<i class="fas fa-credit-card"></i>				Billing			</a>			<a mat-list-item [routerLink]="[\'/user/subscribed-apis\']">				<i class="fas fa-key"></i>			My APIs			</a>		</mat-nav-list>		<!-- Logout item moved outside of mat-nav-list -->		<mat-list-item (click)="logout()" matTooltip="Logout" class="logout-item">			<i class="fas fa-sign-out-alt"></i>			Logout		</mat-list-item>	</mat-sidenav>	<div class="app-sidenav-content">		<router-outlet></router-outlet>	</div></mat-sidenav-container></div>'
     var COMPONENTS = [{'name': 'AlertComponent', 'selector': 'app-alert'},{'name': 'ApiCatalogueListComponent', 'selector': 'app-api-catalogue-list'},{'name': 'ApiDetailComponent', 'selector': 'app-api-detail'},{'name': 'ApiKeyFormComponent', 'selector': 'app-api-key-form'},{'name': 'ApiKeyModalComponent', 'selector': 'app-api-key-modal'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BillingComponent', 'selector': 'app-billing'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DocumentationPage', 'selector': 'app-documentation'},{'name': 'FeaturesComponent', 'selector': 'app-features'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HelpCenterComponent', 'selector': 'app-help-center'},{'name': 'HeroComponent', 'selector': 'app-hero'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'LandingPage', 'selector': 'app-landing'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PricingPage', 'selector': 'app-pricing'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'SearchApiComponent', 'selector': 'app-search-api'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SubscribedApisComponent', 'selector': 'app-subscribed-apis'},{'name': 'TableSubscribedApiCostComponent', 'selector': 'app-table-subscribed-api-cost'},{'name': 'TableSubscribedApisComponent', 'selector': 'app-table-subscribed-user-apis'},{'name': 'UserApiKeysComponent', 'selector': 'app-user-api-keys'},{'name': 'UserApiUsageComponent', 'selector': 'app-charts-api-usage'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SidebarComponent'};
