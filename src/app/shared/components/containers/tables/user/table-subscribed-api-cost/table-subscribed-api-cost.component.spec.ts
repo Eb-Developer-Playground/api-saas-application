@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { TableSubscribedApiCostComponent } from './table-subscribed-api-cost.component';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 describe('TableSubscribedApiCostComponent', () => {
   let component: TableSubscribedApiCostComponent;
@@ -11,7 +12,8 @@ describe('TableSubscribedApiCostComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableSubscribedApiCostComponent ]
+      declarations: [ TableSubscribedApiCostComponent ],
+      imports: [MaterialModule]
     })
     .compileComponents();
   }));

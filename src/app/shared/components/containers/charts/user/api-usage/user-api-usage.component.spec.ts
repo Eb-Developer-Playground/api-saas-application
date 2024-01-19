@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { UserApiUsageComponent } from './user-api-usage.component';
+import { MaterialModule } from 'src/app/shared/material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ApiUsageComponent', () => {
   let component: UserApiUsageComponent;
@@ -11,7 +13,8 @@ describe('ApiUsageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserApiUsageComponent ]
+      declarations: [ UserApiUsageComponent ],
+      imports: [MaterialModule, HttpClientModule]
     })
     .compileComponents();
   }));

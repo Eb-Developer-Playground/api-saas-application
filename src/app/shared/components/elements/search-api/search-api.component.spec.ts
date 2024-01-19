@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { SearchApiComponent } from './search-api.component';
+import { MaterialModule } from 'src/app/shared/material.module';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 
 describe('SearchApiComponent', () => {
   let component: SearchApiComponent;
@@ -11,7 +13,8 @@ describe('SearchApiComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchApiComponent ]
+      declarations: [ SearchApiComponent ],
+      imports: [MaterialModule, NgxMatSelectSearchModule]
     })
     .compileComponents();
   }));

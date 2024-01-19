@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ApiKeyFormComponent } from './api-key-form.component';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 describe('ApiKeyFormComponent', () => {
   let component: ApiKeyFormComponent;
@@ -11,7 +12,8 @@ describe('ApiKeyFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ApiKeyFormComponent ]
+      declarations: [ ApiKeyFormComponent ],
+      imports: [MaterialModule]
     })
     .compileComponents();
   }));

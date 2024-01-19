@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { TableSubscribedApisComponent } from './table-subscribed-apis.component';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 describe('TableSubscribedApisComponent', () => {
   let component: TableSubscribedApisComponent;
@@ -11,7 +12,8 @@ describe('TableSubscribedApisComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableSubscribedApisComponent ]
+      declarations: [ TableSubscribedApisComponent ],
+      imports: [MaterialModule]
     })
     .compileComponents();
   }));

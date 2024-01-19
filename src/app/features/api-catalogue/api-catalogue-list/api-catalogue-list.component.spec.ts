@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ApiCatalogueListComponent } from './api-catalogue-list.component';
+import { MaterialModule } from 'src/app/shared/material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ApiCatalogueListComponent', () => {
   let component: ApiCatalogueListComponent;
@@ -11,7 +13,8 @@ describe('ApiCatalogueListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ApiCatalogueListComponent ]
+      declarations: [ ApiCatalogueListComponent ],
+      imports: [MaterialModule, HttpClientModule]
     })
     .compileComponents();
   }));
