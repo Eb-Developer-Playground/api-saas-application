@@ -1,10 +1,9 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
 import { SubscribedApisComponent } from './subscribed-apis.component';
-import { MaterialModule } from 'src/app/shared/material.module';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('SubscribedApisComponent', () => {
   let component: SubscribedApisComponent;
@@ -13,7 +12,7 @@ describe('SubscribedApisComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ SubscribedApisComponent ],
-      imports: [MaterialModule]
+      imports: [SharedModule, NoopAnimationsModule]
     })
     .compileComponents();
   }));

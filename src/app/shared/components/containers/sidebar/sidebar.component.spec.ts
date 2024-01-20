@@ -1,7 +1,6 @@
-/* tslint:disable:no-unused-variable */
+import { RouterTestingModule } from '@angular/router/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations'; // Add this line
 
 import { SidebarComponent } from './sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,10 +12,10 @@ describe('SidebarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SidebarComponent ],
-      imports: [HttpClientModule, MaterialModule]
+      declarations: [SidebarComponent],
+      imports: [RouterTestingModule,HttpClientModule, MaterialModule, NoopAnimationsModule],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

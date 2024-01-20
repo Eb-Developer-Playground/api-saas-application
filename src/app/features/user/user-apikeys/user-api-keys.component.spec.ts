@@ -6,6 +6,7 @@ import { DebugElement } from '@angular/core';
 import { UserApiKeysComponent } from './user-api-keys.component';
 import { MaterialModule } from 'src/app/shared/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 describe('UserApiKeysComponent', () => {
   let component: UserApiKeysComponent;
@@ -14,7 +15,7 @@ describe('UserApiKeysComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ UserApiKeysComponent ],
-      imports: [BrowserAnimationsModule, MaterialModule]
+      imports: [BrowserAnimationsModule, SharedModule]
     })
     .compileComponents();
   }));

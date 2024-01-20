@@ -1,12 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing'; // Import RouterTestingModule
 import { DocumentationPage } from './documentation.page';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [DocumentationPage],
-      imports: [RouterTestingModule], // Include RouterTestingModule here
+      imports: [RouterTestingModule, SharedModule], // Include RouterTestingModule here
     }).compileComponents();
   });
 

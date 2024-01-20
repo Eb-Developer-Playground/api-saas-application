@@ -1,4 +1,3 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
@@ -6,7 +5,8 @@ import { DebugElement } from '@angular/core';
 import { ApiDetailComponent } from './api-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from 'src/app/shared/material.module';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ApiDetailComponent', () => {
   let component: ApiDetailComponent;
@@ -15,7 +15,8 @@ describe('ApiDetailComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ApiDetailComponent ],
-      imports: [HttpClientModule, MaterialModule, RouterModule]
+      imports: [HttpClientModule, MaterialModule, RouterTestingModule],
+      // providers: [ActivatedRoute],
     })
     .compileComponents();
   }));

@@ -1,11 +1,10 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
 import { ApiCatalogueListComponent } from './api-catalogue-list.component';
-import { MaterialModule } from 'src/app/shared/material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ApiCatalogueListComponent', () => {
   let component: ApiCatalogueListComponent;
@@ -14,7 +13,7 @@ describe('ApiCatalogueListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ApiCatalogueListComponent ],
-      imports: [MaterialModule, HttpClientModule]
+      imports: [HttpClientModule, SharedModule, BrowserAnimationsModule]
     })
     .compileComponents();
   }));

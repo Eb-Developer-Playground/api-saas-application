@@ -1,22 +1,19 @@
-/* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DashboardComponent } from './dashboard.component';
-import { MaterialModule } from 'src/app/shared/material.module';
+import { SharedModule } from 'src/app/shared/shared.module';
+
+HTMLCanvasElement.prototype.getContext = jest.fn();
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ],
-      imports: [MaterialModule]
-    })
-    .compileComponents();
-  }));
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [DashboardComponent],
+      imports: [SharedModule]
+    }).compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DashboardComponent);
@@ -24,7 +21,17 @@ describe('DashboardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the component', () => {
     expect(component).toBeTruthy();
   });
+
+  // it('should initialize ngOnInit', () => {
+  //   const ngOnInitSpy = jest.spyOn(component, 'ngOnInit');
+    
+  //   // Manually call ngOnInit
+  //   component.ngOnInit();
+
+  //   expect(ngOnInitSpy).toHaveBeenCalled();
+  // });
+
 });
