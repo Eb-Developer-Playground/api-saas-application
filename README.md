@@ -15,7 +15,7 @@ This project represents an API SaaS (Software as a Service) application.
 
 I utilize GitHub Actions for seamless CI/CD. The badges above represent the status of the main workflows:
 
-- **Tests:** [![Angular Tests](https://github.com/Eb-Developer-Playground/api-saas-application/actions/workflows/angular-tests.yml/badge.svg)](https://github.com/Eb-Developer-Playground/api-saas-application/actions/workflows/angular-tests.yml)
+- **Tests (using jest):** [![Angular Tests](https://github.com/Eb-Developer-Playground/api-saas-application/actions/workflows/angular-tests.yml/badge.svg)](https://github.com/Eb-Developer-Playground/api-saas-application/actions/workflows/angular-tests.yml)
 
 - **Build and Deploy:** [![Build and Deploy Documentation to GH Pages](https://github.com/Eb-Developer-Playground/api-saas-application/actions/workflows/deploy-gh-pages.yml/badge.svg)](https://github.com/Eb-Developer-Playground/api-saas-application/actions/workflows/deploy-gh-pages.yml)
 - **Cloudflare Pages Deployment:** [![Build and Deploy to Cloudflare Hosting](https://github.com/Eb-Developer-Playground/api-saas-application/actions/workflows/cloud-flare-pages-deployment.yml/badge.svg)](https://github.com/Eb-Developer-Playground/api-saas-application/actions/workflows/cloud-flare-pages-deployment.yml)
