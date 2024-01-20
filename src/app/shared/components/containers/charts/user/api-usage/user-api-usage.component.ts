@@ -38,14 +38,16 @@ export class UserApiUsageComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     if (this.isAuthenticated) {
-      this.createChart(this.chart1Canvas, 'Request Count (Requests)', 'rgba(75, 192, 192, 0.2)', 'rgba(75, 192, 192, 1)', this.apiUsagePerApi.map(entry => entry.requestCount));
-      this.createChart(this.chart2Canvas, 'Traffic Volume (MB)', 'rgba(255, 99, 132, 0.2)', 'rgba(255, 99, 132, 1)', this.apiUsagePerApi.map(entry => entry.trafficVolume));
-      this.createChart(this.chart3Canvas, 'Response Time (ms)', 'rgba(255, 206, 86, 0.2)', 'rgba(255, 206, 86, 1)', this.apiUsagePerApi.map(entry => entry.responseTime));
-      this.createChart(this.chart4Canvas, 'Error Rates (%)', 'rgba(255, 69, 0, 0.2)', 'rgba(255, 69, 0, 1)', this.apiUsagePerApi.map(entry => entry.errorRate));
-      
-
+      setTimeout(() => {
+        this.createChart(this.chart1Canvas, 'Request Count (Requests)', 'rgba(75, 192, 192, 0.2)', 'rgba(75, 192, 192, 1)', this.apiUsagePerApi.map(entry => entry.requestCount));
+        this.createChart(this.chart2Canvas, 'Traffic Volume (MB)', 'rgba(255, 99, 132, 0.2)', 'rgba(255, 99, 132, 1)', this.apiUsagePerApi.map(entry => entry.trafficVolume));
+        this.createChart(this.chart3Canvas, 'Response Time (ms)', 'rgba(255, 206, 86, 0.2)', 'rgba(255, 206, 86, 1)', this.apiUsagePerApi.map(entry => entry.responseTime));
+        this.createChart(this.chart4Canvas, 'Error Rates (%)', 'rgba(255, 69, 0, 0.2)', 'rgba(255, 69, 0, 1)', this.apiUsagePerApi.map(entry => entry.errorRate));
+      }, 0);
     }
   }
+  
+  
 
   createChart(canvasRef: ElementRef, label: string, backgroundColor: string, borderColor: string, data: number[]): void {
     const ctx = canvasRef.nativeElement.getContext('2d');

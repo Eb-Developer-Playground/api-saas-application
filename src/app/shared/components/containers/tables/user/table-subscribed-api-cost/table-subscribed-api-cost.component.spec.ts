@@ -1,10 +1,9 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
 import { TableSubscribedApiCostComponent } from './table-subscribed-api-cost.component';
 import { MaterialModule } from 'src/app/shared/material.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('TableSubscribedApiCostComponent', () => {
   let component: TableSubscribedApiCostComponent;
@@ -13,7 +12,7 @@ describe('TableSubscribedApiCostComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ TableSubscribedApiCostComponent ],
-      imports: [MaterialModule]
+      imports: [MaterialModule, NoopAnimationsModule]
     })
     .compileComponents();
   }));

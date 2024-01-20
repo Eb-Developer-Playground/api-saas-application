@@ -20,13 +20,11 @@ export class ApiDetailComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     // + a unary operator in JavaScript that converts a string to a number
     const apiId = +this.route.snapshot.params['id'];
-    console.log(apiId)
+
     this.apiService.getApiDetails(apiId).subscribe(api => {
       if(api){
         this.apiDetails = api;
-        console.log(api)
         this.swaggerFileUrl = api.swaggerJsonFile as string;
-        console.log(this.apiDetails)
       }
 
     });

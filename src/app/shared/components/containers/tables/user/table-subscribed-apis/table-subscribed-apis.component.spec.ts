@@ -1,10 +1,8 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
-import { TableSubscribedApisComponent } from './table-subscribed-apis.component';
+import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
 import { MaterialModule } from 'src/app/shared/material.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { TableSubscribedApisComponent } from './table-subscribed-apis.component';
 
 describe('TableSubscribedApisComponent', () => {
   let component: TableSubscribedApisComponent;
@@ -12,10 +10,9 @@ describe('TableSubscribedApisComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableSubscribedApisComponent ],
-      imports: [MaterialModule]
-    })
-    .compileComponents();
+      declarations: [TableSubscribedApisComponent],
+      imports: [MaterialModule, NoopAnimationsModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -24,7 +21,13 @@ describe('TableSubscribedApisComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create', fakeAsync(() => {
+    // Perform asynchronous tasks
+    tick(); // Manually advance the virtual clock
+
+    // Ensure changes are detected and view is updated
+    fixture.detectChanges();
+
     expect(component).toBeTruthy();
-  });
+  }));
 });

@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { LandingPage } from './landing.page';
 import { Title } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 describe('Landing Page', () => {
   let titleService: Title;
@@ -10,7 +11,7 @@ describe('Landing Page', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [LandingPage],
-      imports: [RouterTestingModule, HttpClientModule],
+      imports: [RouterTestingModule, HttpClientModule, SharedModule],
       providers: [Title],
     }).compileComponents();
     titleService = TestBed.inject(Title);

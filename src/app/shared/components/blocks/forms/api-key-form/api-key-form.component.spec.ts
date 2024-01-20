@@ -1,10 +1,12 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'; // Import MatDialogModule and related dependencies
 
 import { ApiKeyFormComponent } from './api-key-form.component';
-import { MaterialModule } from 'src/app/shared/material.module';
+import { Clipboard } from '@angular/cdk/clipboard';
+import { ApiKeyService } from 'src/app/services';
+import { Router } from '@angular/router';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 describe('ApiKeyFormComponent', () => {
   let component: ApiKeyFormComponent;
@@ -12,10 +14,16 @@ describe('ApiKeyFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ApiKeyFormComponent ],
-      imports: [MaterialModule]
-    })
-    .compileComponents();
+      declarations: [ApiKeyFormComponent],
+      imports: [MatDialogModule, SharedModule], // Import MatDialogModule
+      providers: [
+        ApiKeyService,
+        Router,
+        Clipboard,
+        { provide: MatDialogRef, useValue: {} }, // Provide a mock MatDialogRef
+        { provide: MAT_DIALOG_DATA, useValue: {} } // Provide mock data if needed
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
