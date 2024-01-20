@@ -353,8 +353,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="49"
-                                    class="link-to-prism">src/app/features/api-catalogue/api-detail/api-detail.component.ts:49</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="47"
+                                    class="link-to-prism">src/app/features/api-catalogue/api-detail/api-detail.component.ts:47</a></div>
                         </td>
                     </tr>
 
@@ -390,8 +390,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="45"
-                                    class="link-to-prism">src/app/features/api-catalogue/api-detail/api-detail.component.ts:45</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="43"
+                                    class="link-to-prism">src/app/features/api-catalogue/api-detail/api-detail.component.ts:43</a></div>
                         </td>
                     </tr>
 
@@ -530,13 +530,11 @@ export class ApiDetailComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     // + a unary operator in JavaScript that converts a string to a number
     const apiId &#x3D; +this.route.snapshot.params[&#x27;id&#x27;];
-    console.log(apiId)
+
     this.apiService.getApiDetails(apiId).subscribe(api &#x3D;&gt; {
       if(api){
         this.apiDetails &#x3D; api;
-        console.log(api)
         this.swaggerFileUrl &#x3D; api.swaggerJsonFile as string;
-        console.log(this.apiDetails)
       }
 
     });

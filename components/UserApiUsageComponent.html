@@ -361,8 +361,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="50"
-                                    class="link-to-prism">src/app/shared/components/containers/charts/user/api-usage/user-api-usage.component.ts:50</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="52"
+                                    class="link-to-prism">src/app/shared/components/containers/charts/user/api-usage/user-api-usage.component.ts:52</a></div>
                         </td>
                     </tr>
 
@@ -932,14 +932,16 @@ export class UserApiUsageComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     if (this.isAuthenticated) {
-      this.createChart(this.chart1Canvas, &#x27;Request Count (Requests)&#x27;, &#x27;rgba(75, 192, 192, 0.2)&#x27;, &#x27;rgba(75, 192, 192, 1)&#x27;, this.apiUsagePerApi.map(entry &#x3D;&gt; entry.requestCount));
-      this.createChart(this.chart2Canvas, &#x27;Traffic Volume (MB)&#x27;, &#x27;rgba(255, 99, 132, 0.2)&#x27;, &#x27;rgba(255, 99, 132, 1)&#x27;, this.apiUsagePerApi.map(entry &#x3D;&gt; entry.trafficVolume));
-      this.createChart(this.chart3Canvas, &#x27;Response Time (ms)&#x27;, &#x27;rgba(255, 206, 86, 0.2)&#x27;, &#x27;rgba(255, 206, 86, 1)&#x27;, this.apiUsagePerApi.map(entry &#x3D;&gt; entry.responseTime));
-      this.createChart(this.chart4Canvas, &#x27;Error Rates (%)&#x27;, &#x27;rgba(255, 69, 0, 0.2)&#x27;, &#x27;rgba(255, 69, 0, 1)&#x27;, this.apiUsagePerApi.map(entry &#x3D;&gt; entry.errorRate));
-      
-
+      setTimeout(() &#x3D;&gt; {
+        this.createChart(this.chart1Canvas, &#x27;Request Count (Requests)&#x27;, &#x27;rgba(75, 192, 192, 0.2)&#x27;, &#x27;rgba(75, 192, 192, 1)&#x27;, this.apiUsagePerApi.map(entry &#x3D;&gt; entry.requestCount));
+        this.createChart(this.chart2Canvas, &#x27;Traffic Volume (MB)&#x27;, &#x27;rgba(255, 99, 132, 0.2)&#x27;, &#x27;rgba(255, 99, 132, 1)&#x27;, this.apiUsagePerApi.map(entry &#x3D;&gt; entry.trafficVolume));
+        this.createChart(this.chart3Canvas, &#x27;Response Time (ms)&#x27;, &#x27;rgba(255, 206, 86, 0.2)&#x27;, &#x27;rgba(255, 206, 86, 1)&#x27;, this.apiUsagePerApi.map(entry &#x3D;&gt; entry.responseTime));
+        this.createChart(this.chart4Canvas, &#x27;Error Rates (%)&#x27;, &#x27;rgba(255, 69, 0, 0.2)&#x27;, &#x27;rgba(255, 69, 0, 1)&#x27;, this.apiUsagePerApi.map(entry &#x3D;&gt; entry.errorRate));
+      }, 0);
     }
   }
+  
+  
 
   createChart(canvasRef: ElementRef, label: string, backgroundColor: string, borderColor: string, data: number[]): void {
     const ctx &#x3D; canvasRef.nativeElement.getContext(&#x27;2d&#x27;);

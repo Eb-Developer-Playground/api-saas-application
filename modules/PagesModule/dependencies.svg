@@ -24,10 +24,6 @@
 <title>cluster_PagesModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="48,-70 48,-268 448,-268 448,-70 48,-70"/>
 </g>
-<g id="clust5" class="cluster">
-<title>cluster_PagesModule_exports</title>
-<polygon fill="none" stroke="black" points="194,-208 194,-260 304,-260 304,-208 194,-208"/>
-</g>
 <g id="clust2" class="cluster">
 <title>cluster_PagesModule_declarations</title>
 <polygon fill="none" stroke="black" points="334,-78 334,-130 440,-130 440,-78 334,-78"/>
@@ -35,6 +31,10 @@
 <g id="clust4" class="cluster">
 <title>cluster_PagesModule_imports</title>
 <polygon fill="none" stroke="black" points="56,-78 56,-130 326,-130 326,-78 56,-78"/>
+</g>
+<g id="clust5" class="cluster">
+<title>cluster_PagesModule_exports</title>
+<polygon fill="none" stroke="black" points="194,-208 194,-260 304,-260 304,-208 194,-208"/>
 </g>
 <!-- LandingPage -->
 <g id="node1" class="node">
