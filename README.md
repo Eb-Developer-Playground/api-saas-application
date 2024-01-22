@@ -55,7 +55,17 @@ Run `npm run test` to execute the unit tests via [Jest](https://jestjs.io/).
 
 ## Running E2E tests 
 
-To check the Cypress test cases
+**To check the Cypress test cases:**
+
+```bash
+npm run cypress:open
+```
+
+**To run the e2e tests:**
+
+```bash
+npm run cypress:run
+```
 
 
 
