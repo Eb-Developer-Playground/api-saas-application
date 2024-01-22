@@ -51,7 +51,13 @@ ng build --localize
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm run test` to execute the unit tests via [Jest](https://jestjs.io/).
+
+## Running E2E tests 
+
+To check the Cypress test cases
+
+
 
 ## Running end-to-end tests
 
