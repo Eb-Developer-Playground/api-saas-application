@@ -6,7 +6,7 @@ import { NavbarComponent } from './navbar.component';
 import { SidebarService } from '../sidebar/sidebar.service';
 import { AccountService, CacheService } from 'src/app/services';
 import { User } from 'src/app/models';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SharedModule } from 'src/app/shared/shared.module';
 
@@ -20,14 +20,15 @@ describe('NavbarComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [NavbarComponent],
-      imports: [RouterTestingModule.withRoutes([]), HttpClientModule, SharedModule],
-      providers: [
+    declarations: [NavbarComponent],
+    imports: [RouterTestingModule.withRoutes([]), SharedModule],
+    providers: [
         SidebarService,
         AccountService,
         CacheService,
-      ],
-    }).compileComponents();
+        provideHttpClient(withInterceptorsFromDi()),
+    ]
+}).compileComponents();
   }));
 
   beforeEach(() => {

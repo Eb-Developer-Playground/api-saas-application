@@ -2,7 +2,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { UserApiUsageComponent } from './user-api-usage.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { apiCatalogueDummyData, apiUsageDummyData } from 'src/app/data';
 
 HTMLCanvasElement.prototype.getContext = jest.fn();
@@ -13,9 +13,10 @@ describe('UserApiUsageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [UserApiUsageComponent],
-      imports: [HttpClientModule, SharedModule],
-    });
+    declarations: [UserApiUsageComponent],
+    imports: [SharedModule],
+    providers: [provideHttpClient(withInterceptorsFromDi())]
+});
 
     fixture = TestBed.createComponent(UserApiUsageComponent);
     component = fixture.componentInstance;

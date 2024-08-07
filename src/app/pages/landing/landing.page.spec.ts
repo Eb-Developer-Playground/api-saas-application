@@ -2,7 +2,7 @@ import { TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { LandingPage } from './landing.page';
 import { Title } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 describe('Landing Page', () => {
@@ -10,10 +10,10 @@ describe('Landing Page', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [LandingPage],
-      imports: [RouterTestingModule, HttpClientModule, SharedModule],
-      providers: [Title],
-    }).compileComponents();
+    declarations: [LandingPage],
+    imports: [RouterTestingModule, SharedModule],
+    providers: [Title, provideHttpClient(withInterceptorsFromDi())]
+}).compileComponents();
     titleService = TestBed.inject(Title);
   }));
 

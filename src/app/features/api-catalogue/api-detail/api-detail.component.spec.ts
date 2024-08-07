@@ -3,7 +3,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ApiDetailComponent } from './api-detail.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { MaterialModule } from 'src/app/shared/material.module';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -14,10 +14,10 @@ describe('ApiDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ApiDetailComponent ],
-      imports: [HttpClientModule, MaterialModule, RouterTestingModule],
-      // providers: [ActivatedRoute],
-    })
+    declarations: [ApiDetailComponent],
+    imports: [MaterialModule, RouterTestingModule],
+    providers: [provideHttpClient(withInterceptorsFromDi())]
+})
     .compileComponents();
   }));
 

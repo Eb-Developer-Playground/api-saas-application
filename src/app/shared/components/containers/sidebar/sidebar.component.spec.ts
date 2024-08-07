@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'; // Add this line
 
 import { SidebarComponent } from './sidebar.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { MaterialModule } from 'src/app/shared/material.module';
 
 describe('SidebarComponent', () => {
@@ -12,9 +12,10 @@ describe('SidebarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SidebarComponent],
-      imports: [RouterTestingModule,HttpClientModule, MaterialModule, NoopAnimationsModule],
-    })
+    declarations: [SidebarComponent],
+    imports: [RouterTestingModule, MaterialModule, NoopAnimationsModule],
+    providers: [provideHttpClient(withInterceptorsFromDi())]
+})
       .compileComponents();
   }));
 

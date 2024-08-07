@@ -2,7 +2,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ApiCatalogueListComponent } from './api-catalogue-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -12,9 +12,10 @@ describe('ApiCatalogueListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ApiCatalogueListComponent ],
-      imports: [HttpClientModule, SharedModule, BrowserAnimationsModule]
-    })
+    declarations: [ApiCatalogueListComponent],
+    imports: [SharedModule, BrowserAnimationsModule],
+    providers: [provideHttpClient(withInterceptorsFromDi())]
+})
     .compileComponents();
   }));
 
