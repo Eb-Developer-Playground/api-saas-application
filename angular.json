@@ -95,16 +95,6 @@
             "buildTarget": "api-monetization:build"
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:jest",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json"
-          }
-        },
         "cypress-run": {
           "builder": "@cypress/schematic:cypress",
           "options": {
