@@ -50,9 +50,6 @@
               "src/theming/index.scss",
               "src/assets/scss/material-font-icons.scss"
             ],
-            "scripts": [
-              "node_modules/redoc/bundles/redoc.standalone.js"
-            ],
             "browser": "src/main.ts"
           },
           "configurations": {
